@@ -1,0 +1,75 @@
+.results-container {
+    justify-content: space-between;
+
+    padding-top: 10px;
+}
+
+.results-products {
+    width: 75%;
+}
+    
+.search-product-container {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.results-products .product {
+    width: 300px;
+    height: 500px;
+    margin-bottom: 10px;
+    display: inline-block;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.results-products .product .offer {
+    background-color: red;
+}
+
+.results-products .product .image-container {
+    height: 50%;
+    justify-content: center;
+}
+
+.results-products .product .product-title {
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+.results-products .product .product-summary {
+    font-size: 1.3rem;
+    margin-left: 10px;
+    width: calc(100% - 30px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.results-products .product .rate-container {
+    margin-top: 10px;
+}
+
+.results-products .product div button.add-to-cart-btn {
+    background-color: #A4C3B2;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 10px 0px;
+    width: 90%;
+    justify-content: center;
+    text-transform: capitalize;
+}
+
+.results-products .product div button.add-to-cart-btn i {
+    margin-left: 10px;
+}
+
+.results-products .product div button.add-to-cart-btn:hover {
+    background-color: #6B9080;
+}
+
+.filter-results-products-container {
+    width: 20%;
+    /* height: calc(100vh - 133px); */
+    position: fixed;
+    background-color: red;
+}

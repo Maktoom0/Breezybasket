@@ -1,0 +1,159 @@
+header {
+    height: 60px;
+    background-color: #6B9080;
+}
+
+.title {
+    margin-left: 20px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-family: 'FontAwesome';
+    letter-spacing: 5px;
+    padding: 10px;
+}
+
+.title:hover {
+    color: #F6FFF8;
+}
+
+.search-area {
+    width: 50%;
+    height: 50%;
+    position: relative;
+}
+
+.search-area form .input-area input {
+    width: 55%;
+    border: none;
+    border-radius: 15px 0px 0px 15px;
+    padding-left: 10px;
+    outline: none;
+}
+
+.search-area form .input-area button:not(.search-area .categories-dropdown .category) {
+    background-color: white;
+}
+
+.search-area form .input-area button:not(.search-area .categories-dropdown .category):hover {
+    cursor: pointer;
+    background-color: #A4C3B2;
+}
+
+.search-area form .input-area button[type="button"]:not(.search-area .categories-dropdown button) {
+    width: 30%;
+    border-left: 1px black solid;
+    border-right: 1px black solid;
+    text-transform: capitalize;
+}
+
+.search-area form .input-area button[type="button"] i {
+    margin-left: 10px;
+}
+
+.search-area form .input-area button[type="button"]:hover + .categories-dropdown {
+    display: block;
+}
+
+.search-area form .input-area button[type="submit"] {
+    width: calc(15% - 10px);
+    border-radius: 0px 15px 15px 0px;
+}
+
+
+.search-area .categories-dropdown {
+    display: none; 
+    margin-left: calc(55% + 10px);
+    width: 30%;
+    background-color: #CCE3DE;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 10;
+}
+
+.search-area .categories-dropdown:hover {
+    display: block;
+}
+
+.search-area .categories-dropdown button {
+    padding: 10px 0px;
+    text-transform: capitalize;
+}
+
+.search-area .categories-dropdown button:hover {
+    cursor: pointer;
+    background-color: #EAF4F4;
+}
+
+.search-dropdown {
+    margin-top: 10px;
+    background-color: #A4C3B2;
+    border-radius: 15px;
+    padding: 10px 0px;
+    z-index: 9;
+}
+
+.search-dropdown:hover {
+    display: block;
+}
+
+.search-dropdown div.flex button.to-search-input {
+    margin-left: 10px;
+}
+
+.search-dropdown div.flex button {
+    width: 4%;
+}
+
+.search-dropdown div.flex a {
+    width: 90%;
+    padding: 5px 0px;
+    margin-left: 1%;
+    padding-left: 1%;
+}
+
+.search-dropdown div.flex a:hover {
+    background-color: #CCE3DE;
+}
+
+.search-dropdown div.flex button:hover {
+    cursor: pointer;
+    color: rgb(29, 29, 29);
+}
+
+.displayed {display: block;}
+
+.fav-area {
+    margin-right: 20px;
+
+}
+
+.fav-area:hover i {
+
+    color: red;
+}
+
+.fav-area i {
+    color: rgb(255, 71, 71);
+    font-size: 2rem;
+    transition: 0.4s;
+}
+
+.cart-area {
+    margin-right: 10px;
+    flex-flow: column;
+    text-align: center;
+}
+
+.cart-area:hover {
+    cursor: pointer;
+    color: rgb(29, 29, 29);
+}
+
+.cart-area p {
+    font-size: 1.2rem;
+}
+
+.cart-area i {
+    font-size: 2rem;
+}

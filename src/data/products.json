@@ -1,0 +1,28 @@
+[
+    {
+        "id": "chips-0",
+        "srcs": "https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg",
+        "title": "Lay's",
+        "summary": "Lay's classic flavor",
+        "price": 20,
+        "offer": 0,
+        "evaluation": 4.3,
+        "evaluationCount": 32,
+        "trademark": "lay's",
+        "details": "title:content|title2:content2|title3:content3",
+        "quantity": 200
+    },
+    {
+        "id": "chips-1",
+        "srcs": "https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg",
+        "title": "Lay's",
+        "summary": "Lay's classic flavor",
+        "price": 50,
+        "offer": 0,
+        "evaluation": 4.3,
+        "evaluationCount": 32,
+        "trademark": "lay's",
+        "details": "title:content|title2:content2|title3:content3",
+        "quantity": 200
+    }
+]

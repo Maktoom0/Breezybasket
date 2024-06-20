@@ -1,0 +1,37 @@
+.categories-container {
+    width: 90%;
+    margin: auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.categories-container .category-provider {
+    width: 30%;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px 0px;
+    transition: 0.4s;
+}
+
+.categories-container .category-provider:hover {
+    /* opacity: 0.5; */
+    transform: scale(1.1);
+}
+
+.categories-container .category-provider:hover img {
+    opacity: 0.7;
+}
+
+.categories-container .category-provider:hover p {
+    opacity: 1;
+}
+
+.categories-container .category-provider p {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    opacity: 0;
+    text-transform: capitalize;
+}

@@ -1,0 +1,99 @@
+.slider-container {
+    /* margin-top: 20px; */
+    margin: 20px 0px 100px;
+    height: 500px;
+}
+
+.products-slider-title {
+    margin-left: 10px;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.products-slider-container {
+    width: 90%;
+    margin-top: 20px;
+    margin-left: 5%;
+}
+
+.slider-container .products-slider-container .product-slide {
+    width: 300px;
+    height: 90%;
+    margin: 0px 5px;
+    background-color: #F6FFF8;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.products-slider-container .product .offer {
+    background-color: red;
+    color: white;
+}
+
+.products-slider-container .product .image-container {
+    height: 50%;
+    justify-content: center;
+}
+
+.products-slider-container .product .product-title {
+    font-size: 1.3rem;
+}
+
+.products-slider-container .product .product-summary {
+    margin: 5px 10px 0px;
+    width: calc(100% - 30px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.products-slider-container .product .product-price,
+.products-slider-container .product .product-price-offer {
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+.products-slider-container .product .product-price {
+    font-size: 1.6rem;
+}
+
+.products-slider-container .product .rate-container {
+    margin-top: 10px;
+}
+
+.products-slider-container .product .rate-container .evaluation {
+    margin-left: 5px;
+}
+
+.products-slider-container .product div .add-to-cart-btn {
+    background-color: #A4C3B2;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 10px 0px;
+    width: 90%;
+    justify-content: center;
+    text-transform: capitalize;
+}
+
+.products-slider-container .product div .add-to-cart-btn i {
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.products-slider-container .product div .add-to-cart-btn:hover {
+    background-color: #6B9080;
+}
+
+/* ============== */
+
+.slider-prev-btn,
+.slider-next-btn {
+    bottom: 0;
+    z-index: 5;
+    width: 100px;
+    margin: 10px 10px 0px;
+}
+
+.slider-prev-btn i,
+.slider-next-btn i {
+    font-size: 2rem;
+}

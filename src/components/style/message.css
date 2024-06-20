@@ -1,0 +1,39 @@
+.message {
+    top: 100px;
+    right: 20px;
+    width: 0px;
+    background-color: #80ed99;
+    padding: 10px 100px;
+    justify-content: center;
+    z-index: 20;
+    border-radius: 20px 0px 0px 20px;
+    transition: 2s;
+
+    p {
+        font-size: 1.3rem;
+        text-transform: capitalize;
+    }
+
+    i {
+        font-size: 1.5rem;
+        margin-left: 20px;
+    }
+}
+
+.message-activated {
+    width: auto;
+} 
+
+@keyframes showMessage {
+    0% {width: 0px; display: none;}
+    10% {width: 300px; display: block;}
+    20% {width: 300px; display: block;}
+    30% {width: 300px; display: block;}
+    40% {width: 300px; display: block;}
+    50% {width: 300px; display: block;}
+    60% {width: 300px; display: block;}
+    70% {width: 300px; display: block;}
+    80% {width: 300px; display: block;}
+    90% {width: 300px; display: block;}
+    100% {width: 0px; display: none;}
+}
