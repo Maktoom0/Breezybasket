@@ -32,8 +32,7 @@ function App() {
 								<TrademarksIconsSlider />
 								<ProductsSlider productsJSON={products.filter((product) => product.offer > 50)} sliderTitle="Offers | more than 50%" />
 								<CategoriesContainer />
-								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "lay's")} sliderTitle="Lay's" />
-								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "doritos")} sliderTitle="Doritos | New flavors available now !!" />
+								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "spiro spathis")} sliderTitle="Spiro Spathis | Stand with children in Palestine" />
 								<ProductsSlider productsJSON={products.filter((product) => product.evaluation > 4)} sliderTitle="High rates" />
 							
 							</>
