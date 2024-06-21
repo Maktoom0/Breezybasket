@@ -102,5 +102,112 @@
         "trademark": "spiro spathis",
         "details": "title:content|title2:content2|title3:content3",
         "quantity": 200
+    },
+
+
+
+    {
+        "id": "juices-8",
+        "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-0.jpg",
+        "title": "Double Dare",
+        "summary": "Double dare pomegranate flavor 275 ML",
+        "price": 10,
+        "offer": 0,
+        "evaluation": 4.3,
+        "evaluationCount": 32,
+        "trademark": "double dare",
+        "details": "title:content|title2:content2|title3:content3",
+        "quantity": 200
+    },
+    {
+        "id": "juices-9",
+        "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-1.jpg",
+        "title": "Double Dare",
+        "summary": "Double dare malt caramel flavor 275 ML",
+        "price": 10,
+        "offer": 0,
+        "evaluation": 4.3,
+        "evaluationCount": 32,
+        "trademark": "double dare",
+        "details": "title:content|title2:content2|title3:content3",
+        "quantity": 200
+    },
+    {
+        "id": "juices-10",
+        "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-2.jpg",
+        "title": "Double Dare",
+        "summary": "Double dare tropical flavor 275 ML",
+        "price": 10,
+        "offer": 0,
+        "evaluation": 4.3,
+        "evaluationCount": 32,
+        "trademark": "double dare",
+        "details": "title:content|title2:content2|title3:content3",
+        "quantity": 200
+    },
+    {
+        "id": "juices-11",
+        "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-3.jpg",
+        "title": "Double Dare",
+        "summary": "Double dare coffee chocolate flavor 275 ML",
+        "price": 10,
+        "offer": 0,
+        "evaluation": 4.3,
+        "evaluationCount": 32,
+        "trademark": "double dare",
+        "details": "title:content|title2:content2|title3:content3",
+        "quantity": 200
+    },
+    {
+        "id": "juices-12",
+        "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-4.jpg",
+        "title": "Double Dare",
+        "summary": "Double dare watermelon flavor 275 ML",
+        "price": 10,
+        "offer": 0,
+        "evaluation": 4.3,
+        "evaluationCount": 32,
+        "trademark": "double dare",
+        "details": "title:content|title2:content2|title3:content3",
+        "quantity": 200
+    },
+    {
+        "id": "juices-13",
+        "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-5.jpg",
+        "title": "Double Dare",
+        "summary": "Double dare grapes flavor 275 ML",
+        "price": 10,
+        "offer": 0,
+        "evaluation": 4.3,
+        "evaluationCount": 32,
+        "trademark": "double dare",
+        "details": "title:content|title2:content2|title3:content3",
+        "quantity": 200
+    },
+    {
+        "id": "juices-14",
+        "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-6.jpg",
+        "title": "Double Dare",
+        "summary": "Double dare pineapple flavor 275 ML",
+        "price": 10,
+        "offer": 0,
+        "evaluation": 4.3,
+        "evaluationCount": 32,
+        "trademark": "double dare",
+        "details": "title:content|title2:content2|title3:content3",
+        "quantity": 200
+    },
+    {
+        "id": "juices-15",
+        "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-7.jpg",
+        "title": "Double Dare",
+        "summary": "Double dare lemon mastic flavor 275 ML",
+        "price": 10,
+        "offer": 0,
+        "evaluation": 4.3,
+        "evaluationCount": 32,
+        "trademark": "double dare",
+        "details": "title:content|title2:content2|title3:content3",
+        "quantity": 200
     }
 ]
