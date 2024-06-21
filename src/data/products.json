@@ -1,27 +1,27 @@
 [
     {
         "id": "juices-0",
-        "srcs": "https://github.com/Maktoom0/Breezybasket/blob/main/public/products_images/spiro-spathis/image-0.jpg",
+        "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/spiro-spathis/image-0.jpg",
         "title": "Spiro Spathis",
         "summary": "Spiro spaths lemon flavor 330 ML",
         "price": 10,
         "offer": 0,
         "evaluation": 4.3,
         "evaluationCount": 32,
-        "trademark": "lay's",
+        "trademark": "spiro spathis",
         "details": "title:content|title2:content2|title3:content3",
         "quantity": 200
     },
     {
         "id": "juices-1",
-        "srcs": "https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg https://m.media-amazon.com/images/I/91NjwbVi0+L._SL1500_.jpg",
-        "title": "Lay's",
-        "summary": "Lay's classic flavor",
-        "price": 50,
+        "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/spiro-spathis/image-1.jpg",
+        "title": "Spiro Spathis",
+        "summary": "Spiro spaths apple flavor 330 ML",
+        "price": 10,
         "offer": 0,
         "evaluation": 4.3,
         "evaluationCount": 32,
-        "trademark": "lay's",
+        "trademark": "spiro spathis",
         "details": "title:content|title2:content2|title3:content3",
         "quantity": 200
     }
