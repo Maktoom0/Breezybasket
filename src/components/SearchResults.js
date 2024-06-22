@@ -39,9 +39,6 @@ export default function SearchResults({productsJSON}){
     const mostExpPrice = Math.max(...productsPrices)
     productsTrademarks = Array.from(new Set(productsTrademarks))
 
-    // matchIds.map(produ)
-    console.log(`trademarks: ${productsTrademarks} \nbiggest price: ${mostExpPrice}`)
-
     const filterMethod = useState({
         trademark: "all",
         rangeStart: 0,

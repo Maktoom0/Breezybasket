@@ -6,7 +6,11 @@ import './style/products-slider.css'
 import 'swiper/css';
 
 export default function ProductsSlider({productsJSON, sliderTitle}){
-    const productsElements = productsJSON.map((product) => 
+    // if (productsJSON.length > 10){
+    //     productsJSON = productsJSON.splice
+    // }
+
+    const productsElements = productsJSON.slice(0, 10).map((product) => 
     <SwiperSlide className='product-slide' key={product.id}>
         <Product 
             id={product.id}
@@ -23,7 +27,10 @@ export default function ProductsSlider({productsJSON, sliderTitle}){
 );
     return (
         <div className='slider-container full-width'>
-            <p className='products-slider-title'>{sliderTitle}</p>      
+            <div className='flex align-items'>
+                <p className='products-slider-title'>{sliderTitle}</p>
+                {productsJSON.length > 10 ? <a style={{marginLeft: "10px", textDecoration: "underline", color: "purple"}} href='/'>See all</a> : <></>}
+            </div>      
             <Swiper 
                 slidesPerView="auto"
                 className='products-slider-container flex full-height'
