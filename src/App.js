@@ -21,19 +21,6 @@ products.map(product => {
 	product.trademark === "spiro spathis" ? spiroSpathisProducts.push(product) : console.log()
 })
 
-const getRandomElement = (arr) => {
-	const randomIndex = Math.floor(Math.random() * arr.length);
-	return arr[randomIndex];
-}
-
-let array = [5, 6, 7, 8, 9, 10]
-
-for (let i of array){
-	const randomIndex = Math.floor(Math.random() * array.length);
-	array[randomIndex] = i
-	console.log(array)
-}
-
 function App() {
 	// const trademarksProductsSliders = trademarksIcons.map((trademark) => <ProductsSlider productsJSON={products.filter((product) => product.trademark === trademark.name)} sliderTitle={trademark.name} />)
   	return (
@@ -46,11 +33,9 @@ function App() {
 							{/* favorites */}
 								<TrademarksIconsSlider />
 								<ProductsSlider productsJSON={products.filter((product) => product.offer > 50)} sliderTitle="Offers | more than 50%" />
+								<ProductsSlider productsJSON={products.filter((product) => product.evaluation === 5)} sliderTitle="5 stars products" />
 								<CategoriesContainer />
-								<ProductsSlider productsJSON={products.filter((product) => product.id.split("-")[0] === "juices")} sliderTitle="Cool Drinks" />
-								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "spiro spathis" || product.trademark === "double dare")} sliderTitle="Stand with poor children in Palestine" />
-								<ProductsSlider productsJSON={products.filter((product) => product.evaluation > 4)} sliderTitle="High rates" />
-							
+								<ProductsSlider productsJSON={products.filter((product) => product.evaluation === 5)} sliderTitle="5 stars products" />
 							</>
 						 } />
 						 {/* product/chips-1 */}

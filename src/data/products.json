@@ -6,8 +6,8 @@
         "summary": "Spiro spathis lemon flavor 330 ML",
         "price": 10,
         "offer": 0,
-        "evaluation": 4.3,
-        "evaluationCount": 32,
+        "evaluation": 3,
+        "evaluationCount": 243,
         "trademark": "spiro spathis",
         "details": "title:content|title2:content2|title3:content3",
         "quantity": 200
@@ -19,27 +19,14 @@
         "summary": "Spiro spathis apple flavor 330 ML",
         "price": 10,
         "offer": 0,
-        "evaluation": 4.3,
-        "evaluationCount": 32,
+        "evaluation": 5,
+        "evaluationCount": 3234,
         "trademark": "spiro spathis",
         "details": "title:content|title2:content2|title3:content3",
         "quantity": 200
     },
     {
         "id": "juices-2",
-        "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/spiro-spathis/image-2.png",
-        "title": "Spiro Spathis",
-        "summary": "Spiro spathis red apple flavor 330 ML",
-        "price": 10,
-        "offer": 0,
-        "evaluation": 4.3,
-        "evaluationCount": 32,
-        "trademark": "spiro spathis",
-        "details": "title:content|title2:content2|title3:content3",
-        "quantity": 200
-    },
-    {
-        "id": "juices-3",
         "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/spiro-spathis/image-3.jpg",
         "title": "Spiro Spathis",
         "summary": "Spiro spathis orange flavor 330 ML",
@@ -52,7 +39,7 @@
         "quantity": 200
     },
     {
-        "id": "juices-4",
+        "id": "juices-3",
         "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/spiro-spathis/image-4.jpg",
         "title": "Spiro Spathis",
         "summary": "Spiro spathis pineapple flavor 330 ML",
@@ -65,7 +52,7 @@
         "quantity": 200
     },
     {
-        "id": "juices-5",
+        "id": "juices-4",
         "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/spiro-spathis/image-5.webp",
         "title": "Spiro Spathis",
         "summary": "Spiro spathis kiwi flavor 330 ML",
@@ -78,7 +65,7 @@
         "quantity": 200
     },
     {
-        "id": "juices-6",
+        "id": "juices-5",
         "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/spiro-spathis/image-6.webp",
         "title": "Spiro Spathis",
         "summary": "Spiro spathis greek grapes flavor 330 ML",
@@ -91,7 +78,7 @@
         "quantity": 200
     },
     {
-        "id": "juices-7",
+        "id": "juices-6",
         "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/spiro-spathis/image-7.png",
         "title": "Spiro Spathis",
         "summary": "Spiro spathis peach flavor 330 ML",
@@ -107,7 +94,7 @@
 
 
     {
-        "id": "juices-8",
+        "id": "juices-7",
         "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-0.jpg",
         "title": "Double Dare",
         "summary": "Double dare pomegranate flavor 275 ML",
@@ -120,7 +107,7 @@
         "quantity": 200
     },
     {
-        "id": "juices-9",
+        "id": "juices-8",
         "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-1.jpg",
         "title": "Double Dare",
         "summary": "Double dare malt caramel flavor 275 ML",
@@ -133,7 +120,7 @@
         "quantity": 200
     },
     {
-        "id": "juices-10",
+        "id": "juices-9",
         "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-2.jpg",
         "title": "Double Dare",
         "summary": "Double dare tropical flavor 275 ML",
@@ -146,7 +133,7 @@
         "quantity": 200
     },
     {
-        "id": "juices-11",
+        "id": "juices-10",
         "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-3.jpg",
         "title": "Double Dare",
         "summary": "Double dare coffee chocolate flavor 275 ML",
@@ -159,7 +146,7 @@
         "quantity": 200
     },
     {
-        "id": "juices-12",
+        "id": "juices-11",
         "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-4.jpg",
         "title": "Double Dare",
         "summary": "Double dare watermelon flavor 275 ML",
@@ -172,7 +159,7 @@
         "quantity": 200
     },
     {
-        "id": "juices-13",
+        "id": "juices-12",
         "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-5.jpg",
         "title": "Double Dare",
         "summary": "Double dare grapes flavor 275 ML",
@@ -185,7 +172,7 @@
         "quantity": 200
     },
     {
-        "id": "juices-14",
+        "id": "juices-13",
         "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-6.jpg",
         "title": "Double Dare",
         "summary": "Double dare pineapple flavor 275 ML",
@@ -198,7 +185,7 @@
         "quantity": 200
     },
     {
-        "id": "juices-15",
+        "id": "juices-14",
         "srcs": "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/image-7.jpg",
         "title": "Double Dare",
         "summary": "Double dare lemon mastic flavor 275 ML",
