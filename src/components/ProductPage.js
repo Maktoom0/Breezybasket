@@ -29,6 +29,7 @@ export default function ProductPage({productsJSON, trademarks}){
 
 
     const product = productsJSON.find(product => product.id === productId);
+
     const productTrademark = trademarks.find(trademark => trademark.name === product.trademark)
     const trademarkProducts = productsJSON.filter(product => product.trademark === productTrademark.name)
     const trademarkProductsEvals = trademarkProducts.map(product => product.evaluation)
@@ -162,6 +163,18 @@ export default function ProductPage({productsJSON, trademarks}){
                 <ProductsSlider productsJSON={products.filter(product_ => product_.id.split("-")[0] === productId.split("-")[0] && product_.trademark !== product.trademark)} sliderTitle="from the same category" />
                 <ProductsSlider productsJSON={products.filter(product_ => product_.trademark === product.trademark && product_.id !== productId)} sliderTitle={`other ${product.trademark} products`} />
                 <ProductsSlider productsJSON={products.filter(product_ => product_.trademark !== product.trademark && product_.id.split("-")[0] !== product.id.split("-")[0])} sliderTitle={`other products you may like`} />
+            </div>
+
+            <div className="comments">
+                <div className="your-comment"></div>
+                <div className="comment">
+                    <div className="up-sec">
+                        <div><img src="https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/user.webp" alt="Breezybasket Programmer" title="Breezybasket Programmer" /></div>
+                        <a href="/">Maktoom</a>
+                    </div>
+
+                    <div className="main-sec"></div>
+                </div>
             </div>
         </div>
     );
