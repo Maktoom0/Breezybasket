@@ -1,7 +1,6 @@
 .slider-container {
-    /* margin-top: 20px; */
     margin: 20px 0px 100px;
-    height: 500px;
+    height: 550px;
 }
 
 .products-slider-title {
@@ -66,6 +65,10 @@
 
 .products-slider-container .product div .add-to-cart-btn {
     background-color: #A4C3B2;
+}
+
+.products-slider-container .product div .add-to-cart-btn,
+.products-slider-container .product div .add-to-fav-btn {
     border-radius: 20px;
     margin-top: 10px;
     padding: 10px 0px;
@@ -73,6 +76,7 @@
     justify-content: center;
     text-transform: capitalize;
 }
+
 
 .products-slider-container .product div .add-to-cart-btn i {
     font-size: 1.2rem;
@@ -96,4 +100,18 @@
 .slider-prev-btn i,
 .slider-next-btn i {
     font-size: 2rem;
+}
+
+.products-slider-container .product div .add-to-fav-btn {
+    border: 1px black solid;
+    transition: .5s;
+}
+
+.products-slider-container .product div .add-to-fav-btn:hover {
+    background-color: red;
+    color: white;
+}
+
+.products-slider-container .product div .add-to-fav-btn i {
+    margin-left: 10px;
 }

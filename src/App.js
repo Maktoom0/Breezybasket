@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Main from './pages/Main';
 import SearchResults from './components/SearchResults';
-import TrademarksIconsSlider from './components/TrademarksIconsSlider';
 import TrademarkProducts from './components/TrademarkProducts';
 import ProductsSlider from './components/ProductsSlider';
 import ProductPage from './components/ProductPage';
@@ -15,6 +14,8 @@ import './App.css';
 import './style/global.css';
 import Favorites from './components/Favorites';
 import CategoriesContainer from './components/CategoriesContainer';
+import TrademarksContainer from './components/TrademarksContainer';
+import Footer from './components/Footer';
 
 let spiroSpathisProducts = []
 products.map(product => {
@@ -30,18 +31,18 @@ function App() {
 					<Routes>
 						<Route path='/' element={ 
 							<>
-							{/* favorites */}
-								<TrademarksIconsSlider />
-								<ProductsSlider productsJSON={products.filter((product) => product.offer > 50)} sliderTitle="Offers | more than 50%" />
+								<TrademarksContainer />
+								<ProductsSlider productsJSON={products.filter((product) => product.offer > 50)} sliderTitle="offers | more than 50%" />
 								<ProductsSlider productsJSON={products.filter((product) => product.evaluation === 5)} sliderTitle="5 stars products" />
 								<CategoriesContainer />
-								<ProductsSlider productsJSON={products.filter((product) => product.evaluation === 5)} sliderTitle="5 stars products" />
+								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "spiro spathis")} sliderTitle="spiro spathis | feel the real taste of juice" />
+								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "double dare")} sliderTitle="double dare with its new flavors" />
 							</>
 						 } />
-						 {/* product/chips-1 */}
+
 						<Route path="search/:searchFor/:category" element={ <SearchResults productsJSON={products} /> } />
 						<Route path="trademark-search/:searchFor" element={ <TrademarkProducts /> } />
-						<Route path="product/:productId" element={ <ProductPage productsJSON={products} /> } />
+						<Route path="product/:productId" element={ <ProductPage productsJSON={products} trademarks={trademarksIcons} /> } />
 						<Route path="cart" element={ <Cart productsJSON={products} /> } />
 						<Route path="favorites" element={ <Favorites productsJSON={products} /> } />
 					</Routes>

@@ -1,0 +1,23 @@
+.trademarks-parent-container > p {
+    font-size: 2rem;
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+
+.trademarks-child-container {
+    width: 60%;
+}
+
+.trademarks-child-container .trademark-container {
+    display: inline-block;
+    background-color: #6B9080;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    margin: 5px;
+    border-radius: 15px;
+    text-transform: capitalize;
+}
+
+.trademarks-child-container .trademark-container:hover {
+    outline: 2px black dashed;
+}

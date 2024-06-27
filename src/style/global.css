@@ -10,14 +10,7 @@
 .blured-app {
     opacity: 0.2;
     pointer-events: none;
-    /* background-color: red; */
 }
-
-/* header {
-    opacity: 1;
-    pointer-events: all;
-    background-color: green;
-} */
 
 .btn {
     background-color: transparent;

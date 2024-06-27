@@ -1,0 +1,128 @@
+.most-rated-product-container {
+    height: 100px;
+    margin: 10px 0px;
+}
+
+.product-page .recommended-product {
+    width: 70%;
+    justify-content: space-evenly;
+}
+
+.product-page .recommended-product .mrpsummary {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.product-page {
+    height: calc(100vh - 60px);
+}
+
+.product-container {
+    margin-top: 10px;
+}
+
+.product-container .images-slider-container {
+    height: calc(100% - 60px - 100px);
+    border-right: 1px rgb(30, 30, 30) solid;
+}
+
+.product-container .images-slider {
+    width: 500px;
+    height: 375px;
+}
+
+.product-container .images-slider .swiper a {
+    justify-content: center;
+}
+
+.product-container .images-slider .swiper-nav-btns {
+    align-items: center;
+}
+
+.product-container .images-slider .swiper .slider-prev-btn {
+    margin-right: 50px;
+}
+
+.product-container .images-slider .swiper .swiper-pagination
+
+.product-container .images-slider .swiper .slider-next-btn {
+    margin-left: 50px;
+}
+
+/* .product-container .images-slider .swiper .slider-prev-btn i,
+.product-container .images-slider .swiper .slider-next-btn i {
+    font-size: 1.2rem;
+} */
+
+.details-container {
+    margin-left: 10px;
+}
+
+.details-container .product-title {
+    font-size: 2rem;
+}
+
+.details-container .product-summary {
+    font-size: 1.4rem;
+    margin-left: 10px;
+}
+
+.details-container .sentence {
+    margin-top: 10px;
+    display: block;
+    text-transform: capitalize;
+}
+
+.details-container .sentence:hover {
+    text-decoration: underline;
+    color: purple;
+}
+
+.details-container .product-price {
+    margin-left: 10px;
+}
+
+.details-container .offer-sentence {
+    background-color: red;
+    margin-left: 20px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 0px 15px 15px 0px;
+}
+
+.details-container .btns-container .add-to-cart-btn {
+    background-color: #A4C3B2;
+    border-radius: 20px;
+    padding: 10px 40px;
+}
+
+.details-container .btns-container .add-to-cart-btn i {
+    font-size: 1.2rem;
+}
+
+.details-container .btns-container button {
+    text-wrap: nowrap;
+}
+
+.details-container .btns-container .add-to-cart-btn i,
+.details-container .btns-container .add-to-fav-btn i {
+    margin-left: 10px;
+}
+
+.details-container .btns-container .add-to-cart-btn:hover {
+    background-color: #6B9080;
+}
+
+.details-container .btns-container .add-to-fav-btn {
+    border-radius: 20px;
+    padding: 10px 40px;
+    border: 1px black solid;
+    margin-left: 10px;
+    transition: .5s;
+}
+
+.details-container .btns-container .add-to-fav-btn:hover {
+    background-color: red;
+    color: white;
+}

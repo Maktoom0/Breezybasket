@@ -5,12 +5,15 @@ import SwiperNavBtns from './SwiperNavBtns'
 import './style/products-slider.css'
 import 'swiper/css';
 
-export default function ProductsSlider({productsJSON, sliderTitle}){
+export default function ProductsSlider({productsJSON, sliderTitle, seeAll = false, seeAllHref = "/"}){
     // if (productsJSON.length > 10){
     //     productsJSON = productsJSON.splice
     // }
 
-    const productsElements = productsJSON.slice(0, 10).map((product) => 
+
+    if (seeAll){ productsJSON = productsJSON.slice(0, 10) }
+
+    const productsElements = productsJSON.map((product) => 
     <SwiperSlide className='product-slide' key={product.id}>
         <Product 
             id={product.id}
@@ -29,7 +32,7 @@ export default function ProductsSlider({productsJSON, sliderTitle}){
         <div className='slider-container full-width'>
             <div className='flex align-items'>
                 <p className='products-slider-title'>{sliderTitle}</p>
-                {productsJSON.length > 10 ? <a style={{marginLeft: "10px", textDecoration: "underline", color: "purple"}} href='/'>See all</a> : <></>}
+                {productsJSON.length > 10 && seeAll ? <a style={{marginLeft: "10px", textDecoration: "underline", color: "purple"}} href={seeAllHref}>See all</a> : <></>}
             </div>      
             <Swiper 
                 slidesPerView="auto"

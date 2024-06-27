@@ -1,0 +1,45 @@
+footer {
+    height: 500px;
+    background-color: #6B9080;
+    justify-content: space-evenly;
+}
+
+footer .footer-section * {
+    text-transform: capitalize;
+}
+
+footer .footer-section p {
+    margin: 5px 0px 0px 20px;
+    font-size: 1.4rem;
+    padding: 0px 0px 10px;
+}
+
+footer .footer-section a {
+    margin-left: 30px;
+    display: block;
+    padding: 2px;
+}
+
+footer .footer-section a:hover {
+    color: #F6FFF8;
+    text-decoration: underline;
+}
+
+footer div.absolute.bottom {
+    height: 50px;
+    justify-content: space-evenly;
+    border-top: 2px black solid;
+}
+
+footer div.absolute.bottom * {
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+
+footer div.absolute.bottom .icons a {
+    margin-left: 20px;
+}
+
+footer div.absolute.bottom a:hover {
+    color: #F6FFF8;
+}
