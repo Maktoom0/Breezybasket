@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { Rate } from "antd";
 
 import SwiperNavBtns from './SwiperNavBtns'
@@ -19,16 +19,34 @@ export default function ProductPage({productsJSON, trademarks}){
 
     const { productsArray, setProductsArray } = useContext(ProductsCartNumberArray);
     const { favArray, setFavArray } = useContext(ProductsFavArray);
+    const [commentState, setCommentState] = useState("")
+    const [comments, setComments] = useState([])
+    const [showComment, setShowComment] = useState(false)
+
+    const commnetsRef = useRef(null)
+
+    const product = productsJSON.find(product => product.id === productId);
+    
+    // if added new products (comments)
+    // for (let i = 0; i < (productsJSON.length - comments.length); i++){
+    //     comments.push("")
+    //     setComments(comments)
+    // }
+    // localStorage.setItem("comments", JSON.stringify(comments))
+
 
     useEffect(() => {
         try {
             const productsArrayL = localStorage.getItem("productsCartArray"); if (productsArrayL){setProductsArray(JSON.parse(productsArrayL))}
             const productsFavArrayL = localStorage.getItem("productsFavArray"); if (productsFavArrayL){setFavArray(JSON.parse(productsFavArrayL))}
-            } catch (error) {console.log("error while loading data from localStorage");}
-    }, [setProductsArray, setFavArray])
+            const comments_ = localStorage.getItem("comments"); if (comments_){setComments(JSON.parse(comments_))}  
+        } catch (error) {console.log("error while loading data from localStorage");}
+    }, [setProductsArray, setFavArray, setComments])
 
+    useEffect(() => {
+        if (comments[productId.split("-")[1]]){setShowComment(true)}
+    }, [comments, productId])
 
-    const product = productsJSON.find(product => product.id === productId);
 
     const productTrademark = trademarks.find(trademark => trademark.name === product.trademark)
     const trademarkProducts = productsJSON.filter(product => product.trademark === productTrademark.name)
@@ -38,6 +56,9 @@ export default function ProductPage({productsJSON, trademarks}){
     let priceAfterOffer = (Math.floor((product.price - (product.price * (product.offer / 100))) * 100) / 100).toFixed(2);
     let mostRatedProductpriceAfterOffer = (Math.floor((mostRatedProduct.price - (mostRatedProduct.price * (mostRatedProduct.offer / 100))) * 100) / 100).toFixed(2);
     
+    // comment: {content: "good!!", replies: ["thatnks for your feedback"]}
+    // comment: productId-commentNum (juices-3-0)
+
     const handleAddToCart = () => {
         let updatedProductsArray = [...productsArray, productId];
         setProductsArray(updatedProductsArray);
@@ -45,7 +66,6 @@ export default function ProductPage({productsJSON, trademarks}){
     }
 
     const handleAddToFav = () => {
-
         if (favArray.includes(productId)){
             favArray.splice(favArray.indexOf(productId), 1);
             setFavArray(favArray);
@@ -57,14 +77,39 @@ export default function ProductPage({productsJSON, trademarks}){
             localStorage.setItem("productsFavArray", JSON.stringify(updatedFavArray));
         }
     }
-    
-    console.log(favArray)
 
     const styleHeartBC = {"fontSize": "1.2rem", "color": "black"}
     const styleHeartAC = {"fontSize": "1.2rem", "color": "red"}
 
     // localStorage.removeItem("productsCartArray")
     // localStorage.removeItem("productsFavArray")
+
+    const currentProductComments = product.comments.split("|||")
+
+    if (comments[productId.split("-")[1]]){document.querySelector(".your-comment").classList.add("undisplayed")}
+
+    const handleCommentSubmit = (event) => {
+        event.preventDefault();
+        comments[productId.split("-")[1]] = commentState
+        setComments(comments)
+        localStorage.setItem("comments", JSON.stringify(comments))
+
+        setShowComment(true)
+    }
+
+    const handleRemoveComment = () => {
+        comments[productId.split("-")[1]] = ""
+        setComments(comments)
+        setShowComment(false)
+        localStorage.setItem("comments", JSON.stringify(comments))
+    }
+
+    const handleStarsClick = (event) => {
+        window.scrollTo({
+            behavior: "smooth",
+            top: commnetsRef.current.offsetTop - 20
+        })
+    }
 
     return (
         <div>
@@ -122,7 +167,7 @@ export default function ProductPage({productsJSON, trademarks}){
                             {product.offer !== 0 ? <div className="offer-sentence">{`${product.offer}% OFF`}</div> : <></>}
                         </div>
                         <div className="flex justify-content" style={{width: "300px"}}>
-                            <Rate defaultValue={product.evaluation} allowHalf disabled />
+                            <div className="rate-cont pointer" onClick={handleStarsClick}><Rate className="pointer" defaultValue={product.evaluation} allowHalf disabled /></div>
                             <p>{`${product.evaluation}/5 | from: ${product.evaluationCount}`}</p>
                         </div>
                         <div>
@@ -165,15 +210,64 @@ export default function ProductPage({productsJSON, trademarks}){
                 <ProductsSlider productsJSON={products.filter(product_ => product_.trademark !== product.trademark && product_.id.split("-")[0] !== product.id.split("-")[0])} sliderTitle={`other products you may like`} />
             </div>
 
-            <div className="comments">
-                <div className="your-comment"></div>
-                <div className="comment">
-                    <div className="up-sec">
-                        <div><img src="https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/user.webp" alt="Breezybasket Programmer" title="Breezybasket Programmer" /></div>
-                        <a href="/">Maktoom</a>
+
+            {/* Comments */}
+
+            <p ref={commnetsRef} style={{textTransform: "capitalize", fontSize: "2rem", marginLeft: "10px"}}>comments</p>
+            <div className="flex" style={{justifyContent: "center"}}>
+                <div className="comments">
+                    <div className="your-comment full-width">
+                        <form>
+                            <p>your comment</p>
+                            <input required placeholder="Type your comment..." onChange={(event) => {setCommentState(event.target.value)}} value={commentState} />
+                            <button className="btn pointer" onClick={handleCommentSubmit}>submit <i className="fa-solid fa-check"></i></button>
+                        </form>
                     </div>
 
-                    <div className="main-sec"></div>
+                    {showComment 
+                    ? 
+                        <div className="your-comments-previewer full-width">
+                            <div className="up-sec flex align-items justify-content">
+                                <div className="flex align-items">
+                                    <div className="image-cont"><img className="full-width" src="https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/user.webp" alt="User" title="User" /></div>
+                                    <p style={{fontSize: "1.2rem"}}>You</p>
+                                    <p style={{color: "gray"}}>4 weeks ago</p>
+                                </div>
+                                <button className="btn pointer" onClick={handleRemoveComment}>remove <i className="fa-solid fa-trash"></i></button>
+                            </div>
+
+                            <div className="main-sec">
+                                <p>{comments[productId.split("-")[1]]}</p>
+                                <div className="flex">
+                                    <Rate defaultValue={product.evaluation} allowHalf disabled />
+                                    <p style={{marginLeft: "10px"}}>{`${product.evaluation}/5`}</p>
+                                </div>
+                            </div>
+                        </div>
+                    :
+                    null
+                }
+
+                    {currentProductComments.map((comment, index) => 
+                        { 
+                            return <div>
+                            <div className="comment full-width" id={index}>
+                                <div className="up-sec flex align-items">
+                                    <div><img className="full-width" src="https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/user.webp" alt="User" title="User" /></div>
+                                    <p style={{fontSize: "1.2rem"}}>User</p>
+                                    <p style={{color: "gray"}}>2 months ago</p>
+                                </div>
+
+                                <div className="main-sec">
+                                    <p>{comment}</p>
+                                    <div className="flex">
+                                        <Rate defaultValue={product.evaluation} allowHalf disabled />
+                                        <p style={{marginLeft: "10px"}}>{`${product.evaluation}/5`}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>}
+                    )}
                 </div>
             </div>
         </div>

@@ -91,6 +91,10 @@
     border-radius: 0px 15px 15px 0px;
 }
 
+.rate-cont * {
+    cursor: pointer;
+}
+
 .details-container .btns-container .add-to-cart-btn {
     background-color: #A4C3B2;
     border-radius: 20px;
@@ -125,4 +129,89 @@
 .details-container .btns-container .add-to-fav-btn:hover {
     background-color: red;
     color: white;
+}
+
+/* ========== */
+
+.comments {
+    width: 50%;
+}
+
+.comments .your-comment p {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin: 10px 0px;
+}
+
+.comments .your-comment input {
+    border: 2px gray solid;
+    outline: none;
+    width: 80%;
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.comments .your-comment input:focus {
+    border-color: black;
+}
+
+.comments .your-comment button {
+    padding: 5px 20px;
+    border: 2px gray solid;
+    border-radius: 15px;
+    text-transform: capitalize;
+}
+
+.comments .your-comment button i {
+    margin-left: 10px;
+}
+
+.comments .your-comment button:hover {
+    border-color: green;
+}
+
+.comments .comment,
+.comments .your-comment,
+.comments .your-comments-previewer {
+    border: 1px black solid;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.comments .your-comments-previewer {
+    border: 3px #6B9080 solid;
+}
+
+.comments .comment .up-sec div,
+.comments .your-comments-previewer .up-sec div div {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.comments .comment .up-sec p,
+.comments .your-comments-previewer .up-sec div p {
+    margin-left: 10px;
+}
+
+.comments .your-comments-previewer button {
+    padding: 5px 10px;
+    border: 2px gray solid;
+    margin-left: 20px;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+
+.comments .your-comments-previewer button:hover {
+    border-color: red;
+}
+
+.comments .comment .main-sec,
+.comments .your-comments-previewer .main-sec {
+    margin: 10px 0px 0px 20px;
 }

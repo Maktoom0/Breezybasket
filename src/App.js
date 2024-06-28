@@ -15,11 +15,10 @@ import './style/global.css';
 import Favorites from './components/Favorites';
 import CategoriesContainer from './components/CategoriesContainer';
 import TrademarksContainer from './components/TrademarksContainer';
-import Footer from './components/Footer';
 
 let spiroSpathisProducts = []
 products.map(product => {
-	product.trademark === "spiro spathis" ? spiroSpathisProducts.push(product) : console.log()
+	if (product.trademark === "spiro spathis"){spiroSpathisProducts.push(product)}
 })
 
 function App() {
