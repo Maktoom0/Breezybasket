@@ -1,3 +1,16 @@
+#product-page .message {
+    background-color: green;
+}
+
+#product-page .message div * {
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+
+#product-page .message div i {
+    margin-left: 20px;
+}
+
 .most-rated-product-container {
     height: 100px;
     margin: 10px 0px;
@@ -95,6 +108,16 @@
     cursor: pointer;
 }
 
+.details-container a.see-comments {
+    text-transform: capitalize;
+    margin: 5px 0px 0px 5px;
+}
+
+.details-container a.see-comments:hover {
+    text-decoration: underline;
+    color: purple;
+}
+
 .details-container .btns-container .add-to-cart-btn {
     background-color: #A4C3B2;
     border-radius: 20px;
@@ -129,6 +152,17 @@
 .details-container .btns-container .add-to-fav-btn:hover {
     background-color: red;
     color: white;
+}
+
+/* ========== */
+
+.about-trademark {
+    justify-content: space-evenly;
+    margin: 10px 0px;
+}
+
+.about-trademark a {
+    height: 150px;
 }
 
 /* ========== */

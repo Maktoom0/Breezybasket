@@ -15,6 +15,7 @@ import './style/global.css';
 import Favorites from './components/Favorites';
 import CategoriesContainer from './components/CategoriesContainer';
 import TrademarksContainer from './components/TrademarksContainer';
+import Message from './components/Message';
 
 let spiroSpathisProducts = []
 products.map(product => {
@@ -36,6 +37,10 @@ function App() {
 								<CategoriesContainer />
 								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "spiro spathis")} sliderTitle="spiro spathis | feel the real taste of juice" />
 								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "double dare")} sliderTitle="double dare with its new flavors" />
+								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "tiger")} sliderTitle="tiger & excellence!" />
+								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "big chips")} sliderTitle="big chips & kettle | the real chips crunch" />
+								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "v7")} sliderTitle="v7 | vitamin sparkling drink" />
+								{/* <Message></Message> */}
 							</>
 						 } />
 

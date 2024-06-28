@@ -13,27 +13,26 @@ import 'swiper/css/pagination'
 
 import {ProductsCartNumberArray, ProductsFavArray } from "./productsCartContext";
 import products from '../data/products.json'
+import Message from "./Message";
 
 export default function ProductPage({productsJSON, trademarks}){
     let { productId } = useParams();
 
     const { productsArray, setProductsArray } = useContext(ProductsCartNumberArray);
     const { favArray, setFavArray } = useContext(ProductsFavArray);
+
     const [commentState, setCommentState] = useState("")
     const [comments, setComments] = useState([])
     const [showComment, setShowComment] = useState(false)
+    const [messageNum, setMessageNum] = useState(0)
 
     const commnetsRef = useRef(null)
 
     const product = productsJSON.find(product => product.id === productId);
     
     // if added new products (comments)
-    // for (let i = 0; i < (productsJSON.length - comments.length); i++){
-    //     comments.push("")
-    //     setComments(comments)
-    // }
-    // localStorage.setItem("comments", JSON.stringify(comments))
 
+    // for (let i = 0; i < (productsJSON.length - comments.length); i++){comments.push(""); setComments(comments)} localStorage.setItem("comments", JSON.stringify(comments))
 
     useEffect(() => {
         try {
@@ -61,21 +60,23 @@ export default function ProductPage({productsJSON, trademarks}){
 
     const handleAddToCart = () => {
         let updatedProductsArray = [...productsArray, productId];
+        setMessageNum(1)
+        document.querySelector("#product-page .message").classList.add("message-activated")
         setProductsArray(updatedProductsArray);
         localStorage.setItem("productsCartArray", JSON.stringify(updatedProductsArray));
     }
 
     const handleAddToFav = () => {
-        if (favArray.includes(productId)){
-            favArray.splice(favArray.indexOf(productId), 1);
-            setFavArray(favArray);
-            localStorage.setItem("productsFavArray", JSON.stringify(favArray));
+        setMessageNum(2)
+        document.querySelector("#product-page .message").classList.add("message-activated")
+        // if (favArray.includes(productId)){
+        //     favArray.splice(favArray.indexOf(productId), 1);
+        //     setFavArray(favArray);
+        //     localStorage.setItem("productsFavArray", JSON.stringify(favArray));
 
-        } else {
-            let updatedFavArray = [...favArray, productId];
-            setFavArray(updatedFavArray);
-            localStorage.setItem("productsFavArray", JSON.stringify(updatedFavArray));
-        }
+        let updatedFavArray = [...favArray, productId];
+        setFavArray(updatedFavArray);
+        localStorage.setItem("productsFavArray", JSON.stringify(updatedFavArray));
     }
 
     const styleHeartBC = {"fontSize": "1.2rem", "color": "black"}
@@ -90,11 +91,13 @@ export default function ProductPage({productsJSON, trademarks}){
 
     const handleCommentSubmit = (event) => {
         event.preventDefault();
-        comments[productId.split("-")[1]] = commentState
-        setComments(comments)
-        localStorage.setItem("comments", JSON.stringify(comments))
+        if (document.getElementById("comment-input").value !== ""){
+            comments[productId.split("-")[1]] = commentState
+            setComments(comments)
+            localStorage.setItem("comments", JSON.stringify(comments))
+            setShowComment(true)
+        }
 
-        setShowComment(true)
     }
 
     const handleRemoveComment = () => {
@@ -105,6 +108,7 @@ export default function ProductPage({productsJSON, trademarks}){
     }
 
     const handleStarsClick = (event) => {
+        event.preventDefault()
         window.scrollTo({
             behavior: "smooth",
             top: commnetsRef.current.offsetTop - 20
@@ -112,7 +116,32 @@ export default function ProductPage({productsJSON, trademarks}){
     }
 
     return (
-        <div>
+        <div id="product-page">
+            <Message>
+                {
+                    messageNum === 1 
+                    ? 
+                        <div className= "added-to-cart flex align-items">
+                            <p>added product to cart</p>
+                            <i className="fa-solid fa-check"></i>
+                        </div>
+
+                    :
+                    null
+                }
+
+                {
+                    messageNum === 2
+                    ?
+                        <div className="added-to-fav flex align-items">
+                            <p>added product to favorites</p>
+                            <i className="fa-solid fa-check"></i>
+                        </div>
+                    :
+                    null
+                }
+            </Message>
+
             <div className="product-page">
                 <div className="most-rated-product-container full-width flex align-items justify-content">
                     <a href={`/trademark-search/${productTrademark.name}`} style={{marginLeft: "20px"}} className="full-height"><img className="full-height" src={productTrademark.src} alt={productTrademark.name} /></a>
@@ -170,6 +199,7 @@ export default function ProductPage({productsJSON, trademarks}){
                             <div className="rate-cont pointer" onClick={handleStarsClick}><Rate className="pointer" defaultValue={product.evaluation} allowHalf disabled /></div>
                             <p>{`${product.evaluation}/5 | from: ${product.evaluationCount}`}</p>
                         </div>
+                        <a href="/" onClick={handleStarsClick} className="see-comments">see comments</a>
                         <div>
                             <p style={{fontSize: "1.5rem", textTransform: "capitalize", marginTop: "20px"}}>details</p>
                             {product.details.split("|").map(detail => 
@@ -197,8 +227,8 @@ export default function ProductPage({productsJSON, trademarks}){
 
             <div style={{height: "1px", borderTop: "1px black solid"}} className="full-width"></div>
 
-            <div className="flex align-items justify-content full-width" style={{margin: "10px 0px"}}>
-                <a href={`/trademark-search/${productTrademark.name}`}><img src={productTrademark.src} alt={productTrademark.name} /></a>
+            <div className="about-trademark flex align-items full-width">
+                <a href={`/trademark-search/${productTrademark.name}`}><img src={productTrademark.src} alt={productTrademark.name} className="full-height" /></a>
                 <p style={{width: "70%"}}>{productTrademark.article}</p>
             </div>
 
@@ -219,7 +249,7 @@ export default function ProductPage({productsJSON, trademarks}){
                     <div className="your-comment full-width">
                         <form>
                             <p>your comment</p>
-                            <input required placeholder="Type your comment..." onChange={(event) => {setCommentState(event.target.value)}} value={commentState} />
+                            <input id="comment-input" placeholder="Type your comment..." onChange={(event) => {setCommentState(event.target.value)}} value={commentState} />
                             <button className="btn pointer" onClick={handleCommentSubmit}>submit <i className="fa-solid fa-check"></i></button>
                         </form>
                     </div>
@@ -229,7 +259,7 @@ export default function ProductPage({productsJSON, trademarks}){
                         <div className="your-comments-previewer full-width">
                             <div className="up-sec flex align-items justify-content">
                                 <div className="flex align-items">
-                                    <div className="image-cont"><img className="full-width" src="https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/user.webp" alt="User" title="User" /></div>
+                                    <div className="image-cont"><img className="full-width" src="https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/you.jpg" alt="User" title="You" /></div>
                                     <p style={{fontSize: "1.2rem"}}>You</p>
                                     <p style={{color: "gray"}}>4 weeks ago</p>
                                 </div>
