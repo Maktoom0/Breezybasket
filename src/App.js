@@ -40,6 +40,7 @@ function App() {
 								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "tiger")} sliderTitle="tiger & excellence!" />
 								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "big chips")} sliderTitle="big chips & kettle | the real chips crunch" />
 								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "v7")} sliderTitle="v7 | vitamin sparkling drink" />
+								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "double x")} sliderTitle="double x" />
 								{/* <Message></Message> */}
 							</>
 						 } />
