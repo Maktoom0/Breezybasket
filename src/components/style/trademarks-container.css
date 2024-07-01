@@ -1,3 +1,7 @@
+.trademarks-parent-container {
+    margin-top: 20px;
+}
+
 .trademarks-parent-container > p {
     font-size: 2rem;
     margin-left: 10px;
@@ -5,10 +9,10 @@
 }
 
 .trademarks-child-container {
-    width: 60%;
+    width: 80%;
 }
 
-.trademarks-child-container .trademark-container {
+.trademarks-child-container a {
     display: inline-block;
     background-color: #6B9080;
     padding: 10px 20px;
@@ -16,8 +20,28 @@
     margin: 5px;
     border-radius: 15px;
     text-transform: capitalize;
+    text-wrap: nowrap;
 }
 
-.trademarks-child-container .trademark-container:hover {
+.trademarks-child-container a:hover {
     outline: 2px black dashed;
+}
+
+@media (max-width: 500px) {
+    .trademarks-child-container .trademarks-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .trademarks-child-container {
+        width: 90%;
+    }
+
+    .trademarks-child-container a {
+        width: 45%;
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 10px 0px;
+    }
 }

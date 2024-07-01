@@ -8,12 +8,12 @@ function Footer() {
     <footer className='relative flex'>
         <div className='footer-section'>
             <p>trademarks</p>
-            <div>{trademarks.map(trademark => <a href={`/trademark/${trademark.name}`}>{trademark.name}</a>)}</div>
+            <div>{trademarks.map(trademark => <a href={`/trademark-search/${trademark.name}/none`}>{trademark.name}</a>)}</div>
         </div>
 
         <div className='footer-section'>
             <p>categories</p>
-            {categories.map(category => <a href={`/category/${category}`}>{category}</a>)}
+            {categories.map(category => <a href={`/trademark-search/none/${category}`}>{category}</a>)}
         </div>
 
         <div className='footer-section'>
@@ -23,10 +23,12 @@ function Footer() {
             <a href='/favorites'>favorites</a>
         </div>
 
-        <div className='absolute bottom full-width flex align-items'>
-            <div className='copyright-sentence'>&copy; all rights reserved 2024</div>
-            <div className='maktoom'>
-                powered by <a href='/'>matkoom</a>
+        <div className='absolute bottom full-width'>
+            <div>
+                <div className='copyright-sentence'>&copy; all rights reserved 2024</div>
+                <div className='maktoom'>
+                    powered by <a href='/'>matkoom</a>
+                </div>
             </div>
             <div className='icons'>
                 <a href='facebook.com'><i className="fa-brands fa-facebook"></i></a>

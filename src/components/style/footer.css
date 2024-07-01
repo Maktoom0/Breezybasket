@@ -29,11 +29,21 @@ footer div.absolute.bottom {
     height: 50px;
     justify-content: space-evenly;
     border-top: 2px black solid;
+    display: flex;
+    align-items: center;
 }
 
 footer div.absolute.bottom * {
     font-size: 1.3rem;
     text-transform: capitalize;
+}
+
+footer div.absolute.bottom > div:nth-child(1) {
+    display: flex;
+}
+
+footer div.absolute.bottom > div:nth-child(1) .maktoom {
+    margin-left: 20px;
 }
 
 footer div.absolute.bottom .icons a {
@@ -42,4 +52,38 @@ footer div.absolute.bottom .icons a {
 
 footer div.absolute.bottom a:hover {
     color: #F6FFF8;
+}
+
+@media (max-width: 700px) {
+    footer div.absolute.bottom {
+        height: 80px;
+        flex-wrap: wrap;
+    }
+
+    footer div.absolute.bottom > div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 50%;
+        align-items: center;
+    }
+
+    footer div.absolute.bottom > div:nth-child(2) {
+        border-top: 1px black solid;
+    }
+
+    footer div.absolute.bottom > div:nth-child(1) * {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 410px) {
+    footer .footer-section p {
+        font-size: 1.1rem;
+    }
+
+    footer .footer-section a,
+    footer div.absolute.bottom > div:nth-child(1) * {
+        font-size: 0.8rem;
+    }
 }

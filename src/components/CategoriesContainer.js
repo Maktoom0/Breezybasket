@@ -14,7 +14,7 @@ function CategoriesContainer() {
     return (
         <div className='categories-container flex'>
             {categoriesImagesArray.map(element => 
-                <a href={`/category/${element.name}`} className='category-provider pointer'>
+                <a href={`/trademark-search/none/${element.name}`} className='pointer'>
                     <img className='full-width' src={element.src} alt={element.name} />
                     <p className='absolute'>{element.name}</p>
                 </a>

@@ -1,75 +1,234 @@
-.results-container {
-    justify-content: space-between;
-
-    padding-top: 10px;
+.results > span {
+    margin: 10px 0px 0px 10px;
 }
 
-.results-products {
-    width: 75%;
-}
-    
-.search-product-container {
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.results-products .product {
-    width: 300px;
-    height: 500px;
-    margin-bottom: 10px;
-    display: inline-block;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.results-products .product .offer {
-    background-color: red;
-}
-
-.results-products .product .image-container {
-    height: 50%;
-    justify-content: center;
-}
-
-.results-products .product .product-title {
-    font-size: 1.8rem;
-    margin-top: 10px;
-}
-
-.results-products .product .product-summary {
-    font-size: 1.3rem;
-    margin-left: 10px;
-    width: calc(100% - 30px);
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.results-products .product .rate-container {
-    margin-top: 10px;
-}
-
-.results-products .product div button.add-to-cart-btn {
-    background-color: #A4C3B2;
-    border-radius: 20px;
-    margin-top: 10px;
-    padding: 10px 0px;
-    width: 90%;
-    justify-content: center;
+.results > span p {
+    font-size: 2rem;
     text-transform: capitalize;
 }
 
-.results-products .product div button.add-to-cart-btn i {
+.results > span button {
+    padding: 5px 10px;
+    text-transform: capitalize;
+    margin-left: 30px;
+    font-size: 1.3rem;
+    border: 2px gray solid;
+    border-radius: 15px;
+    display: none;
+}
+
+.results > span button i {
+    font-size: 1.3rem;
     margin-left: 10px;
 }
 
-.results-products .product div button.add-to-cart-btn:hover {
-    background-color: #6B9080;
+.results > span button:hover {
+    border-color: black;
 }
 
-.filter-results-products-container {
-    width: 20%;
-    /* height: calc(100vh - 133px); */
-    position: fixed;
+.results.result-products-wrapper {
+    width: calc(100% - 310px);
+}
+
+.results .result-products {
+    flex-wrap: wrap;
+}
+
+.results .result-products > a {
+    width: 180px;
+    height: 320px;
+    background-color: #F6FFF8;
+    border: 2px gray solid;
+    margin: 10px;
+    position: relative;
+}
+
+.results .result-products > a:hover {
+    border-color: black;
+}
+
+.results .result-products > a .product-offer {
     background-color: red;
+    color: white;
+}
+
+.results .result-products > a .image-container {
+    height: 130px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.results .result-products > a .product-summary {
+    font-size: 1.2rem;
+    margin-left: 5px;
+}
+
+.results .result-products > a .product-price-offer {
+    font-size: 1.2rem !important;
+    margin-left: 10px;
+}
+
+.results .result-products > a .product-price {
+    font-size: 1.2rem;
+    margin: 10px 0px 0px 10px;
+}
+
+.results .result-products > a .rate-container, 
+.results .result-products > a .rate-container div p {
+    margin-left: 5px;
+}
+
+/* ------------------ */
+
+.filter-section {
+    width: 250px;
+    height: auto;
+    background-color: #A4C3B2;
+    margin: 10px;
+}
+
+.filter-section > button {
+    top: 10px;
+    right: 10px;
+    display: none;
+}
+
+.filter-section > button i {
+    font-size: 1.4rem;
+}
+
+.filter-section > div:not(.filter-section > div:last-child) {
+    border-bottom: 1px black solid;
+}
+
+.filter-section > div {
+    padding-bottom: 10px;
+}
+
+.filter-section > div * {
+    text-transform: capitalize;
+}
+
+.filter-section > div > p {
+    font-size: 1.3rem;
+    margin: 5px 0px 0px 5px;
+}
+
+.filter-section > div ul {
+    margin-left: 10px;
+}
+
+.filter-section > div ul li {
+    margin-top: 5px;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.filter-section > div ul li div {
+    width: 15px;
+    height: 15px;
+    display: flex;
+}
+
+.filter-section > div ul li div i {
+    font-size: 1.22rem;
+    color: green;
+}
+
+.filter-section > div ul li button {
+    margin-left: 10px;
+}
+
+.filter-section > div ul li button:hover {
+    text-decoration: underline;
+    color: #F6FFF8;
+}
+
+.filter-section > div > div {
+    margin-top: 5px;
+}
+
+.filter-section > div > div > p {
+    font-size: 1.1rem;
+    margin-left: 10px;
+}
+
+.filter-section > div > div div.flex {
+    margin-left: 15px;
+}
+
+.filter-section > div > div div.flex p {
+    margin-left: 5px;
+}
+
+.filter-section > div:last-child {
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.filter-section > div:last-child button {
+    border: 2px black solid;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.filter-section > div:last-child button:hover {
+    border-color: red;
+}
+
+.filter-section > div:last-child button i {
+    margin-left: 5px;
+}
+
+@media (max-width: 740px) {
+    .results > span button,
+    .filter-section > button {
+        display: block;
+    }
+
+    .results .filter-section {
+        position: absolute;
+        z-index: 15;
+        transform: translateX(-265px);
+        transition: 1s;
+    }
+
+    .results .filter-section.visible {
+        transform: translate(0px);
+    }
+
+    .results.result-products-wrapper  {
+        width: calc(100% - 20px);
+    }
+}
+
+@media (max-width: 444px) {
+    .results .result-products > a {
+        width: 140px;
+        height: 231px;
+        margin: 5px;
+    }
+
+    .results .result-products > a .product-summary {
+        font-size: 1rem;
+        width: calc(100% - 30px);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .results .result-products > a .product-price-offer {
+        font-size: 1.1rem !important;
+        margin-left: 10px;
+    }
+    
+    .results .result-products > a .product-price {
+        font-size: 1.1rem;
+        margin: 10px 0px 0px 10px;
+    }
+
+    .results .result-products > a .rate-container > p {
+        display: none;
+    }
 }

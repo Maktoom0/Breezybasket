@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import categories from '../data/categories.json'
 import './style/header.css'
 
-import {ProductsCartNumberArray} from "./productsCartContext";
+import {ProductsCartNumberArray, ProductsFavArray} from "./productsCartContext";
 
 export default function Header({productsJSON}){
     let [category, setCategory] = useState("all");
@@ -12,8 +12,10 @@ export default function Header({productsJSON}){
     let [searchHistory, setSearchHistory] = useState([]);
     let [searchDropdownClass, setSearchDropdownClass] = useState("undisplayed");
     const productsArra = JSON.parse(localStorage.getItem("productsCartArray"));
+    const favArra = JSON.parse(localStorage.getItem("productsFavArray"));
 
     const {productsArray} = useContext(ProductsCartNumberArray)
+    const {favArray} = useContext(ProductsFavArray)
 
     
     
@@ -96,40 +98,68 @@ export default function Header({productsJSON}){
             <a href={`/search/${encodeURIComponent(product.summary)}/${category}`}>{product.summary}</a>
         </div>
     )   
+
     return (
-        <header className="header flex justify-content align-items full-width">
-            <a href="/" className="title">breezybasket</a>
+        <header className="header full-width">
+            <div className="upper-header flex align-items justify-content full-width">
+                <a href="/" className="title">breezybasket</a>
+                <div className="flex align-items">
+                    <a href="/favorites" className="fav-area"><i className="fa-solid fa-heart"></i></a>
 
-            <div className="search-area">
-                <form onSubmit={handleSearchFormSubmit} className="full-height full-width">
-                    <div className="input-area full-width full-height">
-                        <input ref={inputRef} className="full-height" placeholder={`Search in ${category}...`} 
-                            onFocus={() => {setSearchDropdownClass("displayed"); const appChildrenProvider = document.getElementById("app-children-provider"); appChildrenProvider.classList.add("blured-app"); }} 
-                            onBlur={() => {setSearchDropdownClass("undisplayed"); const appChildrenProvider = document.getElementById("app-children-provider"); appChildrenProvider.classList.remove('blured-app')}} value={inputValue} onChange={(event) => {setInputValue(event.target.value)}} />
-                        
-                        <button type="button" className="btn full-height">
-                            {category}
-                            <i className="fa-solid fa-chevron-down"></i>    
-                        </button>
-
-                        <div className="categories-dropdown absolute">{categoriesElements}</div>
-                        <button type="submit" className="btn full-height"><i className="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                </form>
-
-                <div className={`search-dropdown ${searchDropdownClass} full-width absolute`}>
-                    {renderSearchDropdown()}
+                    <a href="/cart" className="cart-area">
+                        <p>{productsArra === null ? 0 : productsArra.length}</p>
+                        <i className="fa-solid fa-cart-shopping"></i>
+                    </a>
                 </div>
             </div>
 
-            <div className="flex align-items">
-            <a href="/favorites" className="fav-area"><i className="fa-solid fa-heart"></i></a>
+            <div className="down-header full-width flex justify-content align-items">
+                <a href="/" className="title">breezybasket</a>
 
-            <a href="/cart" className="cart-area">
-                <p>{productsArra === null ? 0 : productsArra.length}</p>
-                <i className="fa-solid fa-cart-shopping"></i>
-            </a>
-            </div>
+                    <div className="search-area">
+                        <form onSubmit={handleSearchFormSubmit} className="full-height full-width">
+                            <div className="input-area full-width full-height">
+                                <input ref={inputRef} className="full-height" placeholder={`Search in ${category}...`} 
+                                    onFocus={() => {setSearchDropdownClass("displayed"); const appChildrenProvider = document.getElementById("app-children-provider"); appChildrenProvider.classList.add("blured-app"); }} 
+                                    onBlur={() => {setSearchDropdownClass("undisplayed"); const appChildrenProvider = document.getElementById("app-children-provider"); appChildrenProvider.classList.remove('blured-app')}} value={inputValue} onChange={(event) => {setInputValue(event.target.value)}} />
+                                
+                                <button type="button" className="btn full-height">
+                                    {category}
+                                    <i className="fa-solid fa-chevron-down"></i>    
+                                </button>
+
+                                <div className="categories-dropdown absolute">{categoriesElements}</div>
+                                <button type="submit" className="btn full-height"><i className="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </form>
+
+                        <div className={`search-dropdown ${searchDropdownClass} full-width absolute`}>
+                            {renderSearchDropdown()}
+                        </div>
+                    </div>
+
+                    <div className="flex align-items">
+                        <a href="/favorites" className="fav-area"><i className="fa-solid fa-heart"></i></a>
+
+                        <a href="/cart" className="cart-area">
+                            <p>{productsArra === null ? 0 : productsArra.length}</p>
+                            <i className="fa-solid fa-cart-shopping"></i>
+                        </a>
+
+                        <button className="header-bars btn pointer"><i className="fa-solid fa-bars"></i></button>
+                        <div className="header-fc-dropdown absolute">
+                            <a href="/cart" className="flex justify-content">
+                                <div>cart <i className="fa-solid fa-cart-shopping"></i></div>
+                                <p>{productsArra === null ? 0 : productsArra.length}</p>
+                            </a>
+
+                            <a href="/favorites" className="flex justify-content">
+                                <div>favorites <i className="fa-solid fa-heart"></i></div>
+                                <p>{favArra === null ? 0 : favArra.length}</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
         </header>
     );

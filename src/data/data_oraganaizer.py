@@ -1,5 +1,6 @@
 import json
 import random
+import os
 
 # numbers list
 eval_numbers_list = range(1, 6)
@@ -12,10 +13,34 @@ with open('src\data\products.json', 'r') as file:
 good_comments = ["Cool product!", "I'll buy another one soon", "I strongly recommend buying one"]
 bad_comments = ["Bad taste", "Terrible!", "I strongly don't recommend buying it"]
 
+# ==================
+
+trademark = "jaguar"
+
+path_to_files = 'public/products_images/{}'.format(trademark)
+file_names = os.listdir(path_to_files)
+
+
+
+
+def sort_by_number(filenames):
+  def get_number(filename):
+    parts = filename.split('-')
+    if len(parts) > 1:
+      try: return int(parts[-1].split('.')[0])
+      except ValueError: pass
+    return float('inf')
+
+  return sorted(filenames, key=get_number)
+
+
+sorted_filenames = sort_by_number(file_names.copy())
+sorted_filenames.pop()
+print(sorted_filenames)
+
 new_products_main = [{
-   "category": "chips",
    "title": "Tiger",
-   "trademark": "tiger"
+   "trademark": trademark
 }]
 
 '''
@@ -41,9 +66,15 @@ new_products_to_add = []
 
 num = 1
 
-while True:
-    product_src = input("product src: ")
-    if product_src == "e": break
+# for image in sorted_filenames :
+#     product_src = "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/{}/{}".format(trademark, image)
+#     print(product_src)
+
+for image in sorted_filenames:
+    product_src = "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/{}/{}".format(trademark, image)
+    print(product_src)
+    product_category = input("Enter the category: ")
+    if product_category == "e": break
     product_summary = input("product summary: ")
     product_price = int(input("product price: "))
 
@@ -64,7 +95,7 @@ while True:
        
     
     new_products_to_add.append({
-       "id": "{}-{}".format(new_products_to_add_global['category'], biggest_id + num), 
+       "id": "{}-{}".format(product_category, biggest_id + num), 
        "srcs": " ".join(product_src_list), "title": new_products_to_add_global["title"], 
        "summary": product_summary,
        "price": product_price,
@@ -75,7 +106,10 @@ while True:
        "details": product_details,
        "quantity": random.choice(range(1, 100)),
        "comments": "|||".join(comments)})
+    
     num += 1
+
+
 
 new_products_json = productsJSON + new_products_to_add
 # for product in productsJSON :
@@ -118,5 +152,6 @@ new_products_json = productsJSON + new_products_to_add
       
 # print(filtered_data)
 
+# remove comment when ready to use
 with open('src\data\products.json', 'w') as file:
    json.dump(new_products_json, file)

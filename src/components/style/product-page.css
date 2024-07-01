@@ -27,12 +27,9 @@
     text-overflow: ellipsis;
 }
 
-.product-page {
-    height: calc(100vh - 60px);
-}
-
 .product-container {
     margin-top: 10px;
+    display: flex;
 }
 
 .product-container .images-slider-container {
@@ -53,38 +50,40 @@
     align-items: center;
 }
 
+.product-container .images-slider .swiper-nav-btns button i {
+    font-size: 1.5rem;
+}
+
 .product-container .images-slider .swiper .slider-prev-btn {
     margin-right: 50px;
 }
-
-.product-container .images-slider .swiper .swiper-pagination
 
 .product-container .images-slider .swiper .slider-next-btn {
     margin-left: 50px;
 }
 
-/* .product-container .images-slider .swiper .slider-prev-btn i,
-.product-container .images-slider .swiper .slider-next-btn i {
-    font-size: 1.2rem;
-} */
-
 .details-container {
-    margin-left: 10px;
+    flex: 1;
 }
 
 .details-container .product-title {
     font-size: 2rem;
+    margin-left: 10px;
 }
 
 .details-container .product-summary {
     font-size: 1.4rem;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .details-container .sentence {
-    margin-top: 10px;
     display: block;
     text-transform: capitalize;
+    margin-left: 10px;
+}
+
+.details-container .quantity-sent {
+    margin-left: 10px;
 }
 
 .details-container .sentence:hover {
@@ -92,8 +91,9 @@
     color: purple;
 }
 
-.details-container .product-price {
-    margin-left: 10px;
+.details-container .product-price,
+.details-container .product-price-offer {
+    margin-left: 20px;
 }
 
 .details-container .offer-sentence {
@@ -102,6 +102,14 @@
     color: white;
     padding: 5px 10px;
     border-radius: 0px 15px 15px 0px;
+}
+
+.details-container .rate-wrapper {
+    margin-left: 5px;
+}
+
+.details-container .rate-wrapper p {
+    margin-left: 20px;
 }
 
 .rate-cont * {
@@ -116,6 +124,12 @@
 .details-container a.see-comments:hover {
     text-decoration: underline;
     color: purple;
+}
+
+.details-container .btns-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
 }
 
 .details-container .btns-container .add-to-cart-btn {
@@ -209,15 +223,21 @@
 
 .comments .comment,
 .comments .your-comment,
-.comments .your-comments-previewer {
+.your-comments-previewer {
     border: 1px black solid;
     border-radius: 15px;
     padding: 10px;
     margin-bottom: 10px;
 }
 
+.comments .comment,
+.comments .your-comment {
+    width: calc(100% - 22px);
+}
+
 .comments .your-comments-previewer {
     border: 3px #6B9080 solid;
+    width: calc(100% - 26px);
 }
 
 .comments .comment .up-sec div,
@@ -248,4 +268,80 @@
 .comments .comment .main-sec,
 .comments .your-comments-previewer .main-sec {
     margin: 10px 0px 0px 20px;
+}
+
+.comments .your-comments-previewer .up-sec button.small-remove-btn {
+    display: none;
+}
+
+.comments .your-comments-previewer .up-sec button.big-remove-btn {
+    display: block;
+}
+
+@media (max-width: 1055px) {
+    .details-container .btns-container {
+        display: block;
+    }
+
+    .details-container .btns-container button {
+        width: 250px;
+        justify-content: center;
+    }
+
+    .details-container .btns-container .add-to-fav-btn {
+        margin: 10px 0px 0px;
+    }
+}
+
+@media (max-width: 900px) {
+    .product-page .most-rated-product-container,
+    .product-page .line {
+        display: none;
+    }
+    
+    .product-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-container .images-slider-container .images-slider,
+    .product-container .details-container {
+        width: 100%;
+    }
+
+    .product-container .images-slider-container {
+        border: none;
+        justify-content: center;
+    }
+
+    .about-trademark {
+        flex-flow: column;
+        justify-content: center;
+    }
+
+    .comments {
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    #product-page .message div * {
+        font-size: 1.1rem;
+    }
+
+    #product-page .message div i {
+        margin-left: 10px;
+    }
+
+    .comments {
+        width: 95%;
+    }
+
+    .comments .your-comments-previewer .up-sec button.big-remove-btn {
+        display: none;
+    }
+
+    .comments .your-comments-previewer .up-sec button.small-remove-btn {
+        display: block;
+    }
 }

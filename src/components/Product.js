@@ -1,6 +1,5 @@
 import { Rate } from "antd";
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 import {ProductsCartNumberArray, ProductsFavArray } from "./productsCartContext";
 
@@ -16,7 +15,6 @@ export default function Product({
     quantity = 0
 }){
     
-    const navigate = useNavigate();
     const [heartClass, setHeartClass] = useState("regular");
 
     const { productsArray, setProductsArray } = useContext(ProductsCartNumberArray);
@@ -72,11 +70,11 @@ export default function Product({
                 <div style={{margin: "10px 10px 0px"}}>
                     <p className="product-title">{title}</p>
                     <p className="product-summary">{summary}</p>
-                    <p className="product-price" style={{fontSize: "1.6rem"}}>{offer !== 0 ? priceAfterOffer + "EGP" : ""}</p>
-                    <p className="product-price-offer" style={offer !== 0 ? {textDecoration: "line-through"} : {textDecoration: "none", fontSize: "1.6rem" ,margin: "5px"}}>{price.toFixed(2)}EGP</p>
-                    <p style={quantity <= 10 && quantity !== 0 ? {color: "red"} : {color: "orange"}}>{quantity <= 10 ? `Only ${quantity} units left` : "In stock"}</p>
+                    <p className="product-price">{offer !== 0 ? priceAfterOffer + "EGP" : ""}</p>
+                    <p className="product-price-offer" style={offer !== 0 ? {textDecoration: "line-through"} : {textDecoration: "none", fontSize: "1.3rem" ,margin: "5px"}}>{price.toFixed(2)}EGP</p>
+                    <p className="qunatity-sent" style={quantity <= 10 && quantity !== 0 ? {color: "red"} : {color: "orange"}}>{quantity <= 10 ? `Only ${quantity} units left` : "In stock"}</p>
                     <div className="rate-container flex align-items justify-content">
-                        <div style={{width: "70%"}} className="flex align-items">
+                        <div className="rate-child-container flex align-items">
                             <Rate defaultValue={evaluation} allowHalf disabled />
                             <p className="evaluation">{`${evaluation}/5`}</p>
                         </div>
@@ -94,6 +92,18 @@ export default function Product({
             <div className={`flex full-width absolute align-items`} style={{justifyContent: "center", bottom: "10px"}}>
                 <button onClick={handleAddToFav} className={`add-to-fav-btn btn pointer flex align-items ${favArray.includes(id) ? "disabled" : ""}`}>
                     {favArray.includes(id) ? "Added to favorites" : "Add to favorites"}
+                    <i style={heartClass === "regular" ? styleHeartBC : styleHeartAC} className={`fa-${heartClass} fa-heart`}></i>
+                </button>
+            </div>
+
+            <div className="small-btns-container absolute full-width">
+                <button onClick={handleAddToCart} className={`btn pointer add-to-cart-btn-small ${productsArray.includes(id) ? "disabled" : ""}`}>
+                    {productsArray.includes(id) ? "Added" : "Cart"}
+                    <i className={`fa-solid ${productsArray.includes(id) ? "fa-check" : "fa-plus"}`}></i>
+                </button>
+
+                <button onClick={handleAddToFav} className={`add-to-fav-btn-small btn pointer ${favArray.includes(id) ? "disabled" : ""}`}>
+                    {favArray.includes(id) ? "Added" : "Favorites"}
                     <i style={heartClass === "regular" ? styleHeartBC : styleHeartAC} className={`fa-${heartClass} fa-heart`}></i>
                 </button>
             </div>

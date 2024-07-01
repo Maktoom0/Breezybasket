@@ -1,4 +1,10 @@
-header {
+header .upper-header {
+    height: 60px;
+    background-color: #A4C3B2;
+    display: none;
+}
+
+header .down-header {
     height: 60px;
     background-color: #6B9080;
 }
@@ -16,51 +22,49 @@ header {
     color: #F6FFF8;
 }
 
-.search-area {
-    width: 50%;
+header .down-header .search-area {
+    width: 60%;
     height: 50%;
     position: relative;
 }
 
-.search-area form .input-area input {
-    width: 55%;
+header .down-header .search-area form .input-area input {
     border: none;
     border-radius: 15px 0px 0px 15px;
     padding-left: 10px;
     outline: none;
 }
 
-.search-area form .input-area button:not(.search-area .categories-dropdown .category) {
+header .down-header .search-area form .input-area button:not(header .down-header .search-area .categories-dropdown .category) {
     background-color: white;
 }
 
-.search-area form .input-area button:not(.search-area .categories-dropdown .category):hover {
+header .down-header .search-area form .input-area button:not(header .down-header .search-area .categories-dropdown .category):hover {
     cursor: pointer;
     background-color: #A4C3B2;
 }
 
-.search-area form .input-area button[type="button"]:not(.search-area .categories-dropdown button) {
+header .down-header .search-area form .input-area button[type="button"]:not(header .down-header .search-area .categories-dropdown button) {
     width: 30%;
     border-left: 1px black solid;
     border-right: 1px black solid;
     text-transform: capitalize;
 }
 
-.search-area form .input-area button[type="button"] i {
+header .down-header .search-area form .input-area button[type="button"] i {
     margin-left: 10px;
 }
 
-.search-area form .input-area button[type="button"]:hover + .categories-dropdown {
+header .down-header .search-area form .input-area button[type="button"]:hover + .categories-dropdown {
     display: block;
 }
 
-.search-area form .input-area button[type="submit"] {
-    width: calc(15% - 10px);
+header .down-header .search-area form .input-area button[type="submit"] {
     border-radius: 0px 15px 15px 0px;
 }
 
 
-.search-area .categories-dropdown {
+header .down-header .search-area .categories-dropdown {
     display: none; 
     margin-left: calc(55% + 10px);
     width: 30%;
@@ -71,21 +75,21 @@ header {
     z-index: 10;
 }
 
-.search-area .categories-dropdown:hover {
+header .down-header .search-area .categories-dropdown:hover {
     display: block;
 }
 
-.search-area .categories-dropdown button {
+header .down-header .search-area .categories-dropdown button {
     padding: 10px 0px;
     text-transform: capitalize;
 }
 
-.search-area .categories-dropdown button:hover {
+header .down-header .search-area .categories-dropdown button:hover {
     cursor: pointer;
     background-color: #EAF4F4;
 }
 
-.search-dropdown {
+header .down-header .search-dropdown {
     margin-top: 10px;
     background-color: #A4C3B2;
     border-radius: 15px;
@@ -93,30 +97,29 @@ header {
     z-index: 9;
 }
 
-.search-dropdown:hover {
+header .down-header .search-dropdown:hover {
     display: block;
 }
 
-.search-dropdown div.flex button.to-search-input {
-    margin-left: 10px;
+header .down-header .search-dropdown div.flex button {
+    padding: 5px 10px;
 }
 
-.search-dropdown div.flex button {
-    width: 4%;
+header .down-header .search-dropdown div.flex button i {
+    font-size: 1.1rem;
 }
 
-.search-dropdown div.flex a {
-    width: 90%;
+header .down-header .search-dropdown div.flex a {
+    flex: 1;
     padding: 5px 0px;
-    margin-left: 1%;
-    padding-left: 1%;
+    padding-left: 10px;
 }
 
-.search-dropdown div.flex a:hover {
+header .down-header .search-dropdown div.flex a:hover {
     background-color: #CCE3DE;
 }
 
-.search-dropdown div.flex button:hover {
+header .down-header .search-dropdown div.flex button:hover {
     cursor: pointer;
     color: rgb(29, 29, 29);
 }
@@ -156,4 +159,138 @@ header {
 
 .cart-area i {
     font-size: 2rem;
+}
+
+header .header-bars {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+header .header-bars i {
+    font-size: 2rem;
+}
+
+header .header-bars:hover ~ .header-fc-dropdown {
+    display: block;
+}
+
+.header-fc-dropdown {
+    right: 10px;
+    background-color: #A4C3B2;
+}
+
+header .header-bars:hover {
+    color: rgb(30, 30, 30);
+}
+
+header .header-bars,
+header .header-fc-dropdown 
+{
+    display: none;
+}
+
+header .header-fc-dropdown {
+    top: 47px;
+    border-radius: 6px;
+    padding: 5px 0px;
+    width: 160px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 11;
+}
+
+header .header-fc-dropdown:hover {
+    display: block;
+}
+
+header .header-fc-dropdown a {
+    padding: 5px 10px;
+}
+
+header .header-fc-dropdown a:hover {
+    background-color: #6B9080;
+}
+
+header .header-fc-dropdown a div {
+    font-size: 1.15rem;
+    text-transform: capitalize;
+}
+
+header .header-fc-dropdown a div i {
+    margin-left: 5px;
+    font-size: 1.15rem;
+}
+
+header .header-fc-dropdown a:nth-child(2) div i {
+    color: rgb(255, 71, 71);
+}
+
+header .header-fc-dropdown a p {
+    font-size: 1.1rem;
+}
+
+@media (min-width: 831px) {
+    header .down-header .search-area .input-area input {
+        width: 55%;
+    }
+
+    header .down-header .search-area .input-area button[type="submit"] {
+        width: calc(15% - 10px);
+    }
+}
+
+@media (max-width: 1000px) {
+    header .down-header .fav-area,
+    header .down-header .cart-area {
+        display: none;
+    }
+
+    header .header-bars {
+        display: block;
+    }
+}
+
+@media (max-width: 830px) {
+    header .down-header .title {
+        display: none;
+    }
+
+    header .down-header .search-area {
+        width: 90%;
+    }
+
+    header .down-header .header-bars {
+        display: none;
+    }
+
+    header .upper-header {
+        display: flex;
+    }
+
+    header .down-header .search-area .input-area button[type="button"] {
+        width: 0%;
+        display: none;
+    }
+
+    header .down-header .search-area .input-area button[type="submit"] {
+        border-left: 1px black solid;
+        width: calc(20% - 11px);
+    }
+
+    header .down-header .search-area .input-area input {
+        width: 80%;
+    }
+
+    header .down-header {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 370px) {
+    header .upper-header .title {
+        font-size: 1.1rem;
+    }
+
+    header .upper-header i {
+        font-size: 1.6rem;
+    }
 }

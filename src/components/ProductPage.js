@@ -144,7 +144,7 @@ export default function ProductPage({productsJSON, trademarks}){
 
             <div className="product-page">
                 <div className="most-rated-product-container full-width flex align-items justify-content">
-                    <a href={`/trademark-search/${productTrademark.name}`} style={{marginLeft: "20px"}} className="full-height"><img className="full-height" src={productTrademark.src} alt={productTrademark.name} /></a>
+                    <a href={`/trademark-search/${productTrademark.name}/none`} style={{marginLeft: "20px"}} className="full-height"><img className="full-height" src={productTrademark.src} alt={productTrademark.name} /></a>
                     <a className="recommended-product flex align-items full-height" href={`/product/${mostRatedProduct.id}`}>
                         <div style={{width: "30%"}}>
                             <p style={{fontWeight: "bolder"}}>{mostRatedProduct.title}</p>
@@ -166,7 +166,7 @@ export default function ProductPage({productsJSON, trademarks}){
                     </a>
             </div>
 
-                <div className="full-width" style={{height: "1px", borderBottom: "2px black solid"}}></div>
+                <div className="full-width line" style={{height: "1px", borderBottom: "2px black solid"}}></div>
                 
                 <div className="product-container full-width full-height flex">
                     <div className="images-slider-container flex align-items">
@@ -189,19 +189,19 @@ export default function ProductPage({productsJSON, trademarks}){
                         <p className="product-title">{product.title}</p>
                         <p className="product-summary">{product.summary}</p>
                         <a className="sentence" href={`/trademark-search/${productTrademark.name}`}>{`see ${productTrademark.name} products`}</a>
-                        <p style={product.quantity <= 10 && product.quantity !== 0 ? {color: "red"} : {color: "orange"}}>{product.quantity <= 10 ? `Only ${product.quantity} units left` : "In stock"}</p>
+                        <p className="quantity-sent" style={product.quantity <= 10 && product.quantity !== 0 ? {color: "red"} : {color: "orange"}}>{product.quantity <= 10 ? `Only ${product.quantity} units left` : "In stock"}</p>
                         <p className="product-price" style={{fontSize: "1.6rem"}}>{product.offer !== 0 ? priceAfterOffer + "EGP" : ""}</p>
                         <div className="flex align-items">
                             <p className="product-price-offer" style={product.offer !== 0 ? {textDecoration: "line-through"} : {textDecoration: "none", fontSize: "1.6rem" ,margin: "5px"}}>{product.price.toFixed(2)}EGP</p>
                             {product.offer !== 0 ? <div className="offer-sentence">{`${product.offer}% OFF`}</div> : <></>}
                         </div>
-                        <div className="flex justify-content" style={{width: "300px"}}>
+                        <div className="rate-wrapper flex align-items">
                             <div className="rate-cont pointer" onClick={handleStarsClick}><Rate className="pointer" defaultValue={product.evaluation} allowHalf disabled /></div>
                             <p>{`${product.evaluation}/5 | from: ${product.evaluationCount}`}</p>
                         </div>
                         <a href="/" onClick={handleStarsClick} className="see-comments">see comments</a>
                         <div>
-                            <p style={{fontSize: "1.5rem", textTransform: "capitalize", marginTop: "20px"}}>details</p>
+                            <p style={{fontSize: "1.5rem", textTransform: "capitalize", margin: "20px 0px 0px 10px"}}>details</p>
                             {product.details.split("|").map(detail => 
                                 <div style={{marginLeft: "20px"}}>
                                     <p style={{fontWeight: "bolder", display: "inline"}}>{`${detail.split(":")[0]} | `}</p>
@@ -210,7 +210,7 @@ export default function ProductPage({productsJSON, trademarks}){
                             )}
                         </div>
                         
-                        <div className="btns-container flex align-items" style={{marginTop: "20px"}}>
+                        <div className="btns-container" style={{marginTop: "20px"}}>
                             <button onClick={handleAddToCart} className={`btn pointer flex align-items add-to-cart-btn ${productsArray.includes(productId) ? "disabled" : ""}`}>
                                 {productsArray.includes(productId) ? "Already added to cart" : "Add to cart"}
                                 <i className={`fa-solid ${productsArray.includes(productId) ? "fa-check" : "fa-plus"}`}></i>
@@ -225,10 +225,10 @@ export default function ProductPage({productsJSON, trademarks}){
                 </div>
             </div>
 
-            <div style={{height: "1px", borderTop: "1px black solid"}} className="full-width"></div>
+            <div style={{height: "1px", borderTop: "1px black solid", marginTop: "10px"}} className="full-width"></div>
 
             <div className="about-trademark flex align-items full-width">
-                <a href={`/trademark-search/${productTrademark.name}`}><img src={productTrademark.src} alt={productTrademark.name} className="full-height" /></a>
+                <a href={`/trademark-search/${productTrademark.name}/none`}><img src={productTrademark.src} alt={productTrademark.name} className="full-height" /></a>
                 <p style={{width: "70%"}}>{productTrademark.article}</p>
             </div>
 
@@ -246,7 +246,7 @@ export default function ProductPage({productsJSON, trademarks}){
             <p ref={commnetsRef} style={{textTransform: "capitalize", fontSize: "2rem", marginLeft: "10px"}}>comments</p>
             <div className="flex" style={{justifyContent: "center"}}>
                 <div className="comments">
-                    <div className="your-comment full-width">
+                    <div className="your-comment">
                         <form>
                             <p>your comment</p>
                             <input id="comment-input" placeholder="Type your comment..." onChange={(event) => {setCommentState(event.target.value)}} value={commentState} />
@@ -256,14 +256,15 @@ export default function ProductPage({productsJSON, trademarks}){
 
                     {showComment 
                     ? 
-                        <div className="your-comments-previewer full-width">
+                        <div className="your-comments-previewer">
                             <div className="up-sec flex align-items justify-content">
                                 <div className="flex align-items">
                                     <div className="image-cont"><img className="full-width" src="https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/you.jpg" alt="User" title="You" /></div>
                                     <p style={{fontSize: "1.2rem"}}>You</p>
                                     <p style={{color: "gray"}}>4 weeks ago</p>
                                 </div>
-                                <button className="btn pointer" onClick={handleRemoveComment}>remove <i className="fa-solid fa-trash"></i></button>
+                                <button className="big-remove-btn btn pointer" onClick={handleRemoveComment}>remove <i className="fa-solid fa-trash"></i></button>
+                                <button className="small-remove-btn btn pointer" onClick={handleRemoveComment}><i className="fa-solid fa-trash"></i></button>
                             </div>
 
                             <div className="main-sec">
@@ -281,7 +282,7 @@ export default function ProductPage({productsJSON, trademarks}){
                     {currentProductComments.map((comment, index) => 
                         { 
                             return <div>
-                            <div className="comment full-width" id={index}>
+                            <div className="comment" id={index}>
                                 <div className="up-sec flex align-items">
                                     <div><img className="full-width" src="https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/user.webp" alt="User" title="User" /></div>
                                     <p style={{fontSize: "1.2rem"}}>User</p>

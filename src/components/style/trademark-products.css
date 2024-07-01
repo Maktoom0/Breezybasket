@@ -1,0 +1,84 @@
+.trademark-products > p {
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin: 10px;
+}
+
+.trademark-products > div {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.trademark-products > div > a {
+    width: 180px;
+    height: 320px;
+    background-color: #F6FFF8;
+    border: 2px gray solid;
+    margin: 10px;
+    position: relative;
+}
+
+.trademark-products > div > a:hover {
+    border-color: black;
+}
+
+.trademark-products > div > a .product-offer {
+    background-color: red;
+    color: white;
+}
+
+.trademark-products > div > a .image-container {
+    height: 130px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.trademark-products > div > a .product-summary {
+    font-size: 1.2rem;
+    margin-left: 5px;
+}
+
+.trademark-products > div > a .product-price-offer {
+    font-size: 1.2rem !important;
+    margin-left: 10px;
+}
+
+.trademark-products > div > a .product-price {
+    font-size: 1.2rem;
+    margin: 10px 0px 0px 10px;
+}
+
+.trademark-products > div > a .rate-container, 
+.trademark-products > div > a .rate-container div p {
+    margin-left: 5px;
+}
+
+@media (max-width: 444px) {
+    .trademark-products > div > a {
+        width: 140px;
+        height: 231px;
+        margin: 5px;
+    }
+
+    .trademark-products > div > a .product-summary {
+        font-size: 1rem;
+        width: calc(100% - 30px);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .trademark-products > div > a .product-price-offer {
+        font-size: 1.1rem !important;
+        margin-left: 10px;
+    }
+    
+    .trademark-products > div > a .product-price {
+        font-size: 1.1rem;
+        margin: 10px 0px 0px 10px;
+    }
+
+    .trademark-products > div > a .rate-container > p {
+        display: none;
+    }
+}
