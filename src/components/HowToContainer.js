@@ -25,7 +25,7 @@ function HowToContainer() {
 
             <div>
                 <p>fast shipping</p>
-                <p>you'll revieve your products before you get up from the sofa</p>
+                <p>you'll recieve your products before you get up from the sofa</p>
                 <i className="fa-solid fa-truck"></i>
             </div>
 

@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className='relative flex'>
         <div className='footer-section'>
-            <p>trademarks</p>
+            <p>brands</p>
             <div>{trademarks.map(trademark => <a href={`/breezybasket/trademark-search/${trademark.name}/none`}>{trademark.name}</a>)}</div>
         </div>
 
