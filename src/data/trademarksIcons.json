@@ -1,9 +1,16 @@
 [
-    {"name": "spiro spathis", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/spiro-spathis/logo.jpg", "article": "The story of Spiro Spathis begins in 1920 with a Greek entrepreneur named Spiro Spathis. He embarked on a mission to create a unique beverage that would quench the thirst of the Egyptian people. The result? The very first soda water ever produced in Egypt - a zesty lemon-flavored delight. Today, Spiro Spathis continues to be a beloved beverage in Egypt. The brand has expanded its offerings beyond the original lemon flavor, offering a variety of fruit-flavored options. Yet, the core essence remains the same – a commitment to quality, heritage, and a taste that refreshes the body and soul."},
-    {"name": "double dare", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/logo.jpg"},
-    {"name": "big chips", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/big-chips/logo.jpg"},
-    {"name": "tiger", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/tiger/logo.png"},
-    {"name": "double x", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-x/logo.png"},
-    {"name": "v7", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/v7/logo.png"},
-    {"name": "jaguar", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/jaguar/logo.jpg"}
+    {"name": "spiro spathis", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/spiro-spathis/logo.jpg", "article": "This is the story of the brand you see right now"},
+    {"name": "double dare", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-dare/logo.jpg", "article": "This is the story of the brand you see right now"},
+    {"name": "big chips", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/big-chips/logo.jpg", "article": "This is the story of the brand you see right now"},
+    {"name": "tiger", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/tiger/logo.png", "article": "This is the story of the brand you see right now"},
+    {"name": "double x", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/double-x/logo.png", "article": "This is the story of the brand you see right now"},
+    {"name": "v7", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/v7/logo.png", "article": "This is the story of the brand you see right now"},
+    {"name": "jaguar", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/jaguar/logo.jpg", "article": "This is the story of the brand you see right now"},
+    {"name": "carlito", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/carlito/logo.png", "article": "This is the story of the brand you see right now"},
+    {"name": "cono", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/cono/logo.jpg", "article": "This is the story of the brand you see right now"},
+    {"name": "pretzo", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/pretzo/logo.jpg", "article": "This is the story of the brand you see right now"},
+    {"name": "raw", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/raw/logo.jpg", "article": "This is the story of the brand you see right now"},
+    {"name": "spuds", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/spuds/logo.png", "article": "This is the story of the brand you see right now"},
+    {"name": "taw taw", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/taw-taw/logo.jpg", "article": "This is the story of the brand you see right now"},
+    {"name": "te te", "src" :"https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/te-te/logo.jpg", "article": "This is the story of the brand you see right now"}
 ]

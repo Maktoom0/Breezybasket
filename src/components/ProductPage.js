@@ -188,7 +188,7 @@ export default function ProductPage({productsJSON, trademarks}){
                     <div className="details-container">
                         <p className="product-title">{product.title}</p>
                         <p className="product-summary">{product.summary}</p>
-                        <a className="sentence" href={`/trademark-search/${productTrademark.name}`}>{`see ${productTrademark.name} products`}</a>
+                        <a className="sentence" href={`/trademark-search/${productTrademark.name}/none`}>{`see ${productTrademark.name} products`}</a>
                         <p className="quantity-sent" style={product.quantity <= 10 && product.quantity !== 0 ? {color: "red"} : {color: "orange"}}>{product.quantity <= 10 ? `Only ${product.quantity} units left` : "In stock"}</p>
                         <p className="product-price" style={{fontSize: "1.6rem"}}>{product.offer !== 0 ? priceAfterOffer + "EGP" : ""}</p>
                         <div className="flex align-items">

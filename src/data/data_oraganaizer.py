@@ -15,9 +15,11 @@ bad_comments = ["Bad taste", "Terrible!", "I strongly don't recommend buying it"
 
 # ==================
 
-trademark = "jaguar"
+trademark = "te te"
 
-path_to_files = 'public/products_images/{}'.format(trademark)
+trademarkPath = "te-te"
+
+path_to_files = 'public/products_images/{}'.format(trademarkPath)
 file_names = os.listdir(path_to_files)
 
 
@@ -38,11 +40,6 @@ sorted_filenames = sort_by_number(file_names.copy())
 sorted_filenames.pop()
 print(sorted_filenames)
 
-new_products_main = [{
-   "title": "Tiger",
-   "trademark": trademark
-}]
-
 '''
 new products
   * category
@@ -54,7 +51,7 @@ new products
 '''
 
 product_details = "title1:content1|title2:content2|title3:content3"
-new_products_to_add_global = {"category": "juices", "title": "Double X", "trademark": "double x"}
+new_products_to_add_global = {"category": "", "title": "Te Te", "trademark": trademark}
 
 products_ids = []
 for product in productsJSON :
@@ -71,7 +68,7 @@ num = 1
 #     print(product_src)
 
 for image in sorted_filenames:
-    product_src = "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/{}/{}".format(trademark, image)
+    product_src = "https://raw.githubusercontent.com/Maktoom0/Breezybasket/main/public/products_images/{}/{}".format(trademarkPath, image)
     print(product_src)
     product_category = input("Enter the category: ")
     if product_category == "e": break
