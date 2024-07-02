@@ -137,7 +137,7 @@ function Cart({productsJSON}) {
             <div className="full-width line" style={{height: "1px", borderBottom: "2px black solid"}}></div>
             <p className="cart-down-title">products like in your cart</p>
             {addedProductsTrademarks.map(addedProductTrademark => 
-                <ProductsSlider productsJSON={productsJSON.filter(product => product.trademark === addedProductTrademark && addedProductsIds.includes(product.id) !== true)} sliderTitle={addedProductTrademark} />
+                <ProductsSlider productsJSON={productsJSON.filter(product => product.trademark === addedProductTrademark)} sliderTitle={addedProductTrademark} />
             )}
             </> : <div className="no-products full-width flex align-items">no products in the cart <a href="/">shop now!</a></div>}
             

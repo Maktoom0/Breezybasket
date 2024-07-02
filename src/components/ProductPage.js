@@ -46,6 +46,8 @@ export default function ProductPage({productsJSON, trademarks}){
         if (comments[productId.split("-")[1]]){setShowComment(true)}
     }, [comments, productId])
 
+    console.log(comments)
+
 
     const productTrademark = trademarks.find(trademark => trademark.name === product.trademark)
     const trademarkProducts = productsJSON.filter(product => product.trademark === productTrademark.name)
