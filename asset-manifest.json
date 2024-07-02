@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Breezybasket/static/css/main.52397e55.css",
+    "main.js": "/Breezybasket/static/js/main.7d63f944.js",
+    "static/js/453.ed3810f9.chunk.js": "/Breezybasket/static/js/453.ed3810f9.chunk.js",
+    "index.html": "/Breezybasket/index.html",
+    "main.52397e55.css.map": "/Breezybasket/static/css/main.52397e55.css.map",
+    "main.7d63f944.js.map": "/Breezybasket/static/js/main.7d63f944.js.map",
+    "453.ed3810f9.chunk.js.map": "/Breezybasket/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52397e55.css",
+    "static/js/main.7d63f944.js"
+  ]
+}
