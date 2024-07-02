@@ -23,14 +23,7 @@ products.map(product => {
 	if (product.trademark === "spiro spathis"){spiroSpathisProducts.push(product)}
 })
 
-if (window.location.href === "/"){
-	window.location.href = "/breezybasket"
-}
-
-
-
 function App() {
-	// const trademarksProductsSliders = trademarksIcons.map((trademark) => <ProductsSlider productsJSON={products.filter((product) => product.trademark === trademark.name)} sliderTitle={trademark.name} />)
   	return (
         <div className="App">
 			<Router>

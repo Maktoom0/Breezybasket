@@ -33,7 +33,6 @@ export default function Product({
     }, [setHeartClass, favArray, id])
 
     let priceAfterOffer = (Math.floor((price - (price * (offer / 100))) * 100) / 100).toFixed(2);
-    // flooredNum = priceAfterOffer.toFixed(2);
 
     const handleAddToFav = () => {
         setHeartClass(heartClass === "regular" ? "solid" : "regular");

@@ -3,7 +3,6 @@ import React from 'react'
 import './style/how-to-container.css'
 
 function HowToContainer() {
-    /* add to cart | order | free shipping | fast shipping */
     return (
         <div className='how-to-cont flex align-items'>
             <div>

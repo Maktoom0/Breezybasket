@@ -25,7 +25,6 @@ export default function Header({productsJSON}){
     useEffect(() => {
         const storedSearchHistory = localStorage.getItem('searchHistory');
 
-        // setNn(productsArr === null ? [] : productsArr)
         if (storedSearchHistory) {setSearchHistory(JSON.parse(storedSearchHistory));}
         }, []);
 
@@ -48,7 +47,6 @@ export default function Header({productsJSON}){
 
     searchHistoryObj = searchHistoryObj.reverse().slice(0, 6);
 
-    // console.log(searchHistoryObj)
     const returnSearchHistoryVal = (searchHistoryEle) => {
         if (typeof(searchHistoryEle.value) === "object"){
             return searchHistoryEle.value.value

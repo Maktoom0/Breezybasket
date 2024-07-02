@@ -29,10 +29,6 @@ export default function ProductPage({productsJSON, trademarks}){
     const commnetsRef = useRef(null)
 
     const product = productsJSON.find(product => product.id === productId);
-    
-    // if added new products (comments)
-
-    // for (let i = 0; i < (productsJSON.length - comments.length); i++){comments.push(""); setComments(comments)} localStorage.setItem("comments", JSON.stringify(comments))
 
     useEffect(() => {
         try {
@@ -56,9 +52,6 @@ export default function ProductPage({productsJSON, trademarks}){
 
     let priceAfterOffer = (Math.floor((product.price - (product.price * (product.offer / 100))) * 100) / 100).toFixed(2);
     let mostRatedProductpriceAfterOffer = (Math.floor((mostRatedProduct.price - (mostRatedProduct.price * (mostRatedProduct.offer / 100))) * 100) / 100).toFixed(2);
-    
-    // comment: {content: "good!!", replies: ["thatnks for your feedback"]}
-    // comment: productId-commentNum (juices-3-0)
 
     const handleAddToCart = () => {
         let updatedProductsArray = [...productsArray, productId];
@@ -71,10 +64,6 @@ export default function ProductPage({productsJSON, trademarks}){
     const handleAddToFav = () => {
         setMessageNum(2)
         document.querySelector("#product-page .message").classList.add("message-activated")
-        // if (favArray.includes(productId)){
-        //     favArray.splice(favArray.indexOf(productId), 1);
-        //     setFavArray(favArray);
-        //     localStorage.setItem("productsFavArray", JSON.stringify(favArray));
 
         let updatedFavArray = [...favArray, productId];
         setFavArray(updatedFavArray);
