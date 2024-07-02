@@ -9,7 +9,7 @@ function TrademarksContainer() {
             <div className='flex' style={{justifyContent: "center"}}><div className='trademarks-child-container'><div className='trademarks-wrapper'>
 
                 {trademarks.map(trademark => 
-                    <a href={`/trademark-search/${trademark.name}/none`} className='pointer' title='Click to start shopping'>{trademark.name}</a>
+                    <a href={`/breezybasket/trademark-search/${trademark.name}/none`} className='pointer' title='Click to start shopping'>{trademark.name}</a>
                 )}
             </div></div></div>
         </div>

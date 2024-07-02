@@ -16,11 +16,18 @@ import trademarksIcons from './data/trademarksIcons.json';
 
 import './App.css';
 import './style/global.css';
+import MainPageContent from './pages/MainPageContent';
 
 let spiroSpathisProducts = []
 products.map(product => {
 	if (product.trademark === "spiro spathis"){spiroSpathisProducts.push(product)}
 })
+
+if (window.location.href === "/"){
+	window.location.href = "/breezybasket"
+}
+
+
 
 function App() {
 	// const trademarksProductsSliders = trademarksIcons.map((trademark) => <ProductsSlider productsJSON={products.filter((product) => product.trademark === trademark.name)} sliderTitle={trademark.name} />)
@@ -29,29 +36,14 @@ function App() {
 			<Router>
 				<Main>
 					<Routes>
-						<Route path='/' element={ 
-							<>
-								<TrademarksContainer />
-								<ProductsSlider productsJSON={products.filter((product) => product.offer > 50)} sliderTitle="offers | more than 50%" />
-								<ProductsSlider productsJSON={products.filter((product) => product.evaluation === 5)} sliderTitle="5 stars products" />
-								<CategoriesContainer />
-								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "spiro spathis")} sliderTitle="spiro spathis | feel the real taste of juice" />
-								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "double dare")} sliderTitle="double dare with its new flavors" />
-								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "tiger")} sliderTitle="tiger & excellence!" />
-								<HowToContainer />
-								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "big chips")} sliderTitle="big chips & kettle | the real chips crunch" />
-								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "double x")} sliderTitle="double x" />
-								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "jaguar")} sliderTitle="Jaguar popcorn, puffcorn, cheetos and others!" />
-								<ProductsSlider productsJSON={products.filter((product) => product.trademark === "taw taw")} sliderTitle="taw taw | sponge colorful cakes!" />
-								<ProductsSlider productsJSON={products.filter((product) => product.trademark !== "spiro spathis" && product.trademark !== "double dare" && product.trademark !== "tiger" && product.trademark !== "big chips" && product.trademark !== "double x" && product.trademark !== "jaguar" && product.trademark !== "taw taw")} sliderTitle="others" />
-							</>
-						 } />
+						<Route path='/' element={ <MainPageContent /> } />
+						<Route path='/breezybasket' element={ <MainPageContent /> } />
 
-						<Route path="search/:searchFor/:category" element={ <SearchResults productsJSON={products} /> } />
-						<Route path="trademark-search/:searchFor/:category" element={ <TrademarkProducts productsJSON={products} /> } />
-						<Route path="product/:productId" element={ <ProductPage productsJSON={products} trademarks={trademarksIcons} /> } />
-						<Route path="cart" element={ <Cart productsJSON={products} /> } />
-						<Route path="favorites" element={ <Favorites productsJSON={products} /> } />
+						<Route path="/breezybasket/search/:searchFor/:category" element={ <SearchResults productsJSON={products} /> } />
+						<Route path="/breezybasket/trademark-search/:searchFor/:category" element={ <TrademarkProducts productsJSON={products} /> } />
+						<Route path="/breezybasket/product/:productId" element={ <ProductPage productsJSON={products} trademarks={trademarksIcons} /> } />
+						<Route path="/breezybasket/cart" element={ <Cart productsJSON={products} /> } />
+						<Route path="/breezybasket/favorites" element={ <Favorites productsJSON={products} /> } />
 					</Routes>
 				</Main>
 			</Router>

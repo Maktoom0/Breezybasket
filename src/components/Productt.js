@@ -4,7 +4,7 @@ function Productt({product}) {
 
     let priceAfterOffer = (Math.floor((product.price - (product.price * (product.offer / 100))) * 100) / 100).toFixed(2);
     return (
-        <a href={`/product/${product.id}`}>
+        <a href={`/breezybasket/product/${product.id}`}>
             <div className="product-offer absolute top left">{product.offer !== 0 ? `${product.offer}% OFF` : ""}</div>
             <div className="image-container full-width flex align-items"><img className="full-height" src={product.srcs.split(" ")[0]} alt={product.title} title={product.summary} /></div>
             <p className="product-summary">{product.summary}</p>
