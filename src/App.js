@@ -27,11 +27,11 @@ function App() {
 					<Route exact path='/' element={ <MainPageContent /> } />
 					<Route exact path='/breezybasket' element={ <MainPageContent /> } />
 
-					<Route exact path="search/:searchFor/:category" element={ <SearchResults productsJSON={products} /> } />
-					<Route exact path="trademark-search/:searchFor/:category" element={ <TrademarkProducts productsJSON={products} /> } />
-					<Route exact path="product/:productId" element={ <ProductPage productsJSON={products} trademarks={trademarksIcons} /> } />
-					<Route exact path="cart" element={ <Cart productsJSON={products} /> } />
-					<Route exact path="favorites" element={ <Favorites productsJSON={products} /> } />
+					<Route exact path="/search/:searchFor/:category" element={ <SearchResults productsJSON={products} /> } />
+					<Route exact path="/trademark-search/:searchFor/:category" element={ <TrademarkProducts productsJSON={products} /> } />
+					<Route exact path="/product/:productId" element={ <ProductPage productsJSON={products} trademarks={trademarksIcons} /> } />
+					<Route exact path="/cart" element={ <Cart productsJSON={products} /> } />
+					<Route exact path="/favorites" element={ <Favorites productsJSON={products} /> } />
 				</Routes>
 			</Main>
     	</div>
