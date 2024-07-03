@@ -36,7 +36,7 @@ function Favorites({productsJSON}) {
         return (
             <div key={product.id} className="added-product flex align-items">
                 <div className="image-wrapper full-height flex"><img className="full-height" src={product.srcs.split(" ")[0]} title={product.title} alt={product.title} /></div>
-                <a href={`/breezybasket/product/${product.id}`} className="added-product-details flex align-items full-height">
+                <a href={`/product/${product.id}`} className="added-product-details flex align-items full-height">
                     <div>
                         <p className="added-product-title">{product.title}</p>
                         <p className="added-product-summary" title={product.summary}>{product.summary}</p>

@@ -80,31 +80,31 @@ export default function Header({productsJSON}){
     const searchHistoryElements = searchHistoryObj.map((searchHistoryEle) => 
     <div className="full-width flex align-items justify-content" key={searchHistoryEle.id}>
         <button type="button" className="to-search-input btn" onClick={() => {setInputValue(`${returnSearchHistoryVal(searchHistoryEle)}`); if(inputRef.current){inputRef.current.focus()}}}><i className="fa-solid fa-arrow-trend-up"></i></button>
-        <a href={`/breezybasket/search/${encodeURIComponent(returnSearchHistoryVal(searchHistoryEle))}/${category}`}>{returnSearchHistoryVal(searchHistoryEle)}</a>
+        <a href={`/search/${encodeURIComponent(returnSearchHistoryVal(searchHistoryEle))}/${category}`}>{returnSearchHistoryVal(searchHistoryEle)}</a>
         <button type="button" className="remove-search-history-ele btn" onClick={() => {removeItem(returnSearchHistoryVal(searchHistoryEle))}}><i className="fa-solid fa-xmark"></i></button>
     </div>)
 
     const searchSuggestionsElements = searchSuggestionsArray.map((product) => 
         <div className="full-width flex align-items justify-content" key={product.id}>
             <button type="button" className="to-search-input btn" onClick={() => {setInputValue(`${product.summary}`); if(inputRef.current){inputRef.current.focus()}}}><i className="fa-solid fa-arrow-trend-up"></i></button>
-            <a href={`/breezybasket/search/${encodeURIComponent(product.summary)}/${category}`}>{product.summary}</a>
+            <a href={`/search/${encodeURIComponent(product.summary)}/${category}`}>{product.summary}</a>
         </div>)
         
     const searchProposalsElements = searchProposalsArray.map((product) => 
         <div className="full-width flex align-items justify-content" key={product.id}>
             <button type="button" className="to-search-input btn" onClick={() => {setInputValue(`${product.summary}`); if(inputRef.current){inputRef.current.focus()}}}><i className="fa-solid fa-arrow-trend-up"></i></button>
-            <a href={`/breezybasket/search/${encodeURIComponent(product.summary)}/${category}`}>{product.summary}</a>
+            <a href={`/search/${encodeURIComponent(product.summary)}/${category}`}>{product.summary}</a>
         </div>
     )   
 
     return (
         <header className="header full-width">
             <div className="upper-header flex align-items justify-content full-width">
-                <a href="/breezybasket/" className="title">breezybasket</a>
+                <a href="/" className="title">breezybasket</a>
                 <div className="flex align-items">
-                    <a href="/breezybasket/favorites" className="fav-area"><i className="fa-solid fa-heart"></i></a>
+                    <a href="/favorites" className="fav-area"><i className="fa-solid fa-heart"></i></a>
 
-                    <a href="/breezybasket/cart" className="cart-area">
+                    <a href="/cart" className="cart-area">
                         <p>{productsArra === null ? 0 : productsArra.length}</p>
                         <i className="fa-solid fa-cart-shopping"></i>
                     </a>
@@ -112,7 +112,7 @@ export default function Header({productsJSON}){
             </div>
 
             <div className="down-header full-width flex justify-content align-items">
-                <a href="/breezybasket/" className="title">breezybasket</a>
+                <a href="/" className="title">breezybasket</a>
 
                     <div className="search-area">
                         <form onSubmit={handleSearchFormSubmit} className="full-height full-width">
@@ -137,21 +137,21 @@ export default function Header({productsJSON}){
                     </div>
 
                     <div className="flex align-items">
-                        <a href="/breezybasket/favorites" className="fav-area"><i className="fa-solid fa-heart"></i></a>
+                        <a href="/favorites" className="fav-area"><i className="fa-solid fa-heart"></i></a>
 
-                        <a href="/breezybasket/cart" className="cart-area">
+                        <a href="/cart" className="cart-area">
                             <p>{productsArra === null ? 0 : productsArra.length}</p>
                             <i className="fa-solid fa-cart-shopping"></i>
                         </a>
 
                         <button className="header-bars btn pointer"><i className="fa-solid fa-bars"></i></button>
                         <div className="header-fc-dropdown absolute">
-                            <a href="/breezybasket/cart" className="flex justify-content">
+                            <a href="/cart" className="flex justify-content">
                                 <div>cart <i className="fa-solid fa-cart-shopping"></i></div>
                                 <p>{productsArra === null ? 0 : productsArra.length}</p>
                             </a>
 
-                            <a href="/breezybasket/favorites" className="flex justify-content">
+                            <a href="/favorites" className="flex justify-content">
                                 <div>favorites <i className="fa-solid fa-heart"></i></div>
                                 <p>{favArra === null ? 0 : favArra.length}</p>
                             </a>

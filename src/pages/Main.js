@@ -8,7 +8,7 @@ export default function Main(props){
     return (
         <ProductsCartNumProvider>
             <Header productsJSON={products} />
-            <div id="app-children-provider">{props.children}</div>
+                <div id="app-children-provider">{props.children}</div>
             <Footer />
         </ProductsCartNumProvider>
     );
