@@ -135,8 +135,8 @@ export default function ProductPage({productsJSON, trademarks}){
 
             <div className="product-page">
                 <div className="most-rated-product-container full-width flex align-items justify-content">
-                    <a href={`/trademark-search/${productTrademark.name}/none`} style={{marginLeft: "20px"}} className="full-height"><img className="full-height" src={productTrademark.src} alt={productTrademark.name} /></a>
-                    <a className="recommended-product flex align-items full-height" href={`/product/${mostRatedProduct.id}`}>
+                    <a href={`#/trademark-search/${productTrademark.name}/none`} style={{marginLeft: "20px"}} className="full-height"><img className="full-height" src={productTrademark.src} alt={productTrademark.name} /></a>
+                    <a className="recommended-product flex align-items full-height" href={`#/product/${mostRatedProduct.id}`}>
                         <div style={{width: "30%"}}>
                             <p style={{fontWeight: "bolder"}}>{mostRatedProduct.title}</p>
                             <p className="mrpsummary">{mostRatedProduct.summary}</p>
@@ -179,7 +179,7 @@ export default function ProductPage({productsJSON, trademarks}){
                     <div className="details-container">
                         <p className="product-title">{product.title}</p>
                         <p className="product-summary">{product.summary}</p>
-                        <a className="sentence" href={`/trademark-search/${productTrademark.name}/none`}>{`see ${productTrademark.name} products`}</a>
+                        <a className="sentence" href={`#/trademark-search/${productTrademark.name}/none`}>{`see ${productTrademark.name} products`}</a>
                         <p className="quantity-sent" style={product.quantity <= 10 && product.quantity !== 0 ? {color: "red"} : {color: "orange"}}>{product.quantity <= 10 ? `Only ${product.quantity} units left` : "In stock"}</p>
                         <p className="product-price" style={{fontSize: "1.6rem"}}>{product.offer !== 0 ? priceAfterOffer + "EGP" : ""}</p>
                         <div className="flex align-items">
@@ -190,7 +190,7 @@ export default function ProductPage({productsJSON, trademarks}){
                             <div className="rate-cont pointer" onClick={handleStarsClick}><Rate className="pointer" defaultValue={product.evaluation} allowHalf disabled /></div>
                             <p>{`${product.evaluation}/5 | from: ${product.evaluationCount}`}</p>
                         </div>
-                        <a href="/" onClick={handleStarsClick} className="see-comments">see comments</a>
+                        <a href="#/" onClick={handleStarsClick} className="see-comments">see comments</a>
                         <div>
                             <p style={{fontSize: "1.5rem", textTransform: "capitalize", margin: "20px 0px 0px 10px"}}>details</p>
                             {product.details.split("|").map(detail => 
@@ -219,7 +219,7 @@ export default function ProductPage({productsJSON, trademarks}){
             <div style={{height: "1px", borderTop: "1px black solid", marginTop: "10px"}} className="full-width"></div>
 
             <div className="about-trademark flex align-items full-width">
-                <a href={`/trademark-search/${productTrademark.name}/none`}><img src={productTrademark.src} alt={productTrademark.name} className="full-height" /></a>
+                <a href={`#/trademark-search/${productTrademark.name}/none`}><img src={productTrademark.src} alt={productTrademark.name} className="full-height" /></a>
                 <p style={{width: "70%"}}>{productTrademark.article}</p>
             </div>
 

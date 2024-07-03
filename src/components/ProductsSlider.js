@@ -5,7 +5,7 @@ import SwiperNavBtns from './SwiperNavBtns'
 import './style/products-slider.css'
 import 'swiper/css';
 
-export default function ProductsSlider({productsJSON, sliderTitle, seeAll = false, seeAllHref = "/"}){
+export default function ProductsSlider({productsJSON, sliderTitle, seeAll = false, seeAllHref = "#/"}){
     // if (productsJSON.length > 10){
     //     productsJSON = productsJSON.splice
     // }

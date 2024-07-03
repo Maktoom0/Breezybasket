@@ -63,7 +63,7 @@ export default function Product({
 
     return (
         <div className="product full-width full-height">
-            <a href={`/product/${id}`}  className="full-width block relative" style={{height: "85%"}}>
+            <a href={`#/product/${id}`}  className="full-width block relative" style={{height: "85%"}}>
                 <p className="offer absolute top left">{offer !== 0 ? `${offer}% OFF` : ""}</p>
                 <div className="image-container full-width flex"><img className="full-height" src={srcs.split(" ")[0]} alt={title} title={title} /></div>
                 <div style={{margin: "10px 10px 0px"}}>
