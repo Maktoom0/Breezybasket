@@ -139,7 +139,7 @@ function Cart({productsJSON}) {
             {addedProductsTrademarks.map(addedProductTrademark => 
                 <ProductsSlider productsJSON={productsJSON.filter(product => product.trademark === addedProductTrademark)} sliderTitle={addedProductTrademark} />
             )}
-            </> : <div className="no-products full-width flex align-items">no products in the cart <a href="/">shop now!</a></div>}
+            </> : <div className="no-products full-width flex align-items">no products in the cart <a href="#/">shop now!</a></div>}
             
         </div>
     )
