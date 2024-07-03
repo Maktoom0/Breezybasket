@@ -24,7 +24,8 @@ function App() {
         <div className="App">
 			<Main>
 				<Routes>
-					<Route path='/' element={ <MainPageContent /> } />
+					<Route exact path='/' element={ <MainPageContent /> } />
+					<Route exact path='/breezybasket' element={ <MainPageContent /> } />
 
 					<Route exact path="search/:searchFor/:category" element={ <SearchResults productsJSON={products} /> } />
 					<Route exact path="trademark-search/:searchFor/:category" element={ <TrademarkProducts productsJSON={products} /> } />
