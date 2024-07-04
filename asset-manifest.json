@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/breezybasket/static/css/main.6ff183a6.css",
+    "main.css": "/breezybasket/static/css/main.9831ae70.css",
     "main.js": "/breezybasket/static/js/main.8d44d89b.js",
     "static/js/453.ed3810f9.chunk.js": "/breezybasket/static/js/453.ed3810f9.chunk.js",
     "index.html": "/breezybasket/index.html",
-    "main.6ff183a6.css.map": "/breezybasket/static/css/main.6ff183a6.css.map",
+    "main.9831ae70.css.map": "/breezybasket/static/css/main.9831ae70.css.map",
     "main.8d44d89b.js.map": "/breezybasket/static/js/main.8d44d89b.js.map",
     "453.ed3810f9.chunk.js.map": "/breezybasket/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ff183a6.css",
+    "static/css/main.9831ae70.css",
     "static/js/main.8d44d89b.js"
   ]
 }
