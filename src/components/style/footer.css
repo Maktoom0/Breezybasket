@@ -46,12 +46,26 @@ footer div.absolute.bottom > div:nth-child(1) .maktoom {
     margin-left: 20px;
 }
 
+footer div.absolute.bottom > div:nth-child(1) .maktoom a {
+    background: linear-gradient(90deg, #ff00f3, #0033ff, #ff0000, #0033ff, #ffff00, #ff00f3);
+    background-size: 400%;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: changeIconColor 15s linear infinite;
+}
+
 footer div.absolute.bottom .icons a {
     margin-left: 20px;
 }
 
 footer div.absolute.bottom a:hover {
     color: #F6FFF8;
+}
+
+@keyframes changeIconColor {
+    0% {background-position: 0%;}
+    100% {background-position: 400%;}
 }
 
 @media (max-width: 700px) {
